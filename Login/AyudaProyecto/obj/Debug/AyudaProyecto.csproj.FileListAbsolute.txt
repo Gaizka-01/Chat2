@@ -1,0 +1,17 @@
+c:\users\cguanada\source\repos\Login\AyudaProyecto\bin\Debug\AyudaProyecto.exe.config
+c:\users\cguanada\source\repos\Login\AyudaProyecto\bin\Debug\AyudaProyecto.exe
+c:\users\cguanada\source\repos\Login\AyudaProyecto\bin\Debug\AyudaProyecto.pdb
+c:\users\cguanada\source\repos\Login\AyudaProyecto\bin\Debug\MySql.Data.dll
+c:\users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.csprojAssemblyReference.cache
+c:\users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.Properties.Resources.resources
+c:\users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.csproj.GenerateResource.cache
+c:\users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.csproj.CoreCompileInputs.cache
+c:\users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.csproj.CopyComplete
+c:\users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.exe
+c:\users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.pdb
+c:\users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.Properties.Form1.resources
+C:\Users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.Registrar.resources
+C:\Users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.ventanaAlumno.resources
+C:\Users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.Consulta.resources
+C:\Users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.consultaProfesor.resources
+C:\Users\cguanada\source\repos\Login\AyudaProyecto\obj\Debug\AyudaProyecto.ventanaProfesor.resources
