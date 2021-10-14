@@ -38,13 +38,13 @@
             this.dtgMostrarConsultas = new System.Windows.Forms.DataGridView();
             this.grpBuscarConsulta = new System.Windows.Forms.GroupBox();
             this.grpMostrarConsultas = new System.Windows.Forms.GroupBox();
-            this.txtMensaje = new System.Windows.Forms.TextBox();
-            this.txtEnviar = new System.Windows.Forms.Button();
-            this.grpBuscarConsultas1 = new System.Windows.Forms.GroupBox();
-            this.txtConsulta = new System.Windows.Forms.TextBox();
-            this.btnBuscar1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtEnviar = new System.Windows.Forms.Button();
+            this.txtMensaje = new System.Windows.Forms.TextBox();
+            this.grpBuscarConsultas1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar1 = new System.Windows.Forms.Button();
+            this.txtConsulta = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAlumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMensajeA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMensajeP)).BeginInit();
@@ -71,7 +71,7 @@
             "3BB"});
             this.lbGrupos.Location = new System.Drawing.Point(10, 55);
             this.lbGrupos.Name = "lbGrupos";
-            this.lbGrupos.Size = new System.Drawing.Size(56, 119);
+            this.lbGrupos.Size = new System.Drawing.Size(56, 153);
             this.lbGrupos.TabIndex = 10;
             this.lbGrupos.SelectedIndexChanged += new System.EventHandler(this.lbGrupos_SelectedIndexChanged);
             // 
@@ -80,7 +80,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.Size = new System.Drawing.Size(119, 16);
             this.label1.TabIndex = 11;
             this.label1.Text = "Seleccione un grupo";
             // 
@@ -96,12 +96,13 @@
             // 
             this.txtCI.Location = new System.Drawing.Point(10, 303);
             this.txtCI.Name = "txtCI";
-            this.txtCI.Size = new System.Drawing.Size(290, 20);
+            this.txtCI.Size = new System.Drawing.Size(290, 21);
             this.txtCI.TabIndex = 13;
             this.txtCI.Text = "Ingrese cedula del alumno sin puntos ni guiones";
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Location = new System.Drawing.Point(10, 341);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(116, 31);
@@ -125,6 +126,7 @@
             this.dtgMensajeP.Name = "dtgMensajeP";
             this.dtgMensajeP.Size = new System.Drawing.Size(237, 321);
             this.dtgMensajeP.TabIndex = 16;
+            this.dtgMensajeP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgMensajeP_CellContentClick);
             // 
             // dtgMostrarConsultas
             // 
@@ -141,6 +143,8 @@
             this.grpBuscarConsulta.Controls.Add(this.dtgAlumnos);
             this.grpBuscarConsulta.Controls.Add(this.label1);
             this.grpBuscarConsulta.Controls.Add(this.lbGrupos);
+            this.grpBuscarConsulta.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.grpBuscarConsulta.ForeColor = System.Drawing.Color.White;
             this.grpBuscarConsulta.Location = new System.Drawing.Point(2, 16);
             this.grpBuscarConsulta.Name = "grpBuscarConsulta";
             this.grpBuscarConsulta.Size = new System.Drawing.Size(307, 399);
@@ -150,12 +154,15 @@
             // 
             // grpMostrarConsultas
             // 
+            this.grpMostrarConsultas.BackColor = System.Drawing.Color.DodgerBlue;
             this.grpMostrarConsultas.Controls.Add(this.label3);
             this.grpMostrarConsultas.Controls.Add(this.label2);
             this.grpMostrarConsultas.Controls.Add(this.txtEnviar);
             this.grpMostrarConsultas.Controls.Add(this.txtMensaje);
             this.grpMostrarConsultas.Controls.Add(this.dtgMensajeP);
             this.grpMostrarConsultas.Controls.Add(this.dtgMensajeA);
+            this.grpMostrarConsultas.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.grpMostrarConsultas.ForeColor = System.Drawing.Color.White;
             this.grpMostrarConsultas.Location = new System.Drawing.Point(315, 135);
             this.grpMostrarConsultas.Name = "grpMostrarConsultas";
             this.grpMostrarConsultas.Size = new System.Drawing.Size(483, 400);
@@ -164,13 +171,23 @@
             this.grpMostrarConsultas.Text = "Consultas";
             this.grpMostrarConsultas.Visible = false;
             // 
-            // txtMensaje
+            // label3
             // 
-            this.txtMensaje.Location = new System.Drawing.Point(6, 374);
-            this.txtMensaje.Name = "txtMensaje";
-            this.txtMensaje.Size = new System.Drawing.Size(240, 20);
-            this.txtMensaje.TabIndex = 18;
-            this.txtMensaje.Text = "Ingrese mensaje a enviar";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(261, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 16);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Mensaje Recibido";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(50, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 16);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Tu respuestas";
             // 
             // txtEnviar
             // 
@@ -182,11 +199,22 @@
             this.txtEnviar.UseVisualStyleBackColor = true;
             this.txtEnviar.Click += new System.EventHandler(this.txtEnviar_Click);
             // 
+            // txtMensaje
+            // 
+            this.txtMensaje.Location = new System.Drawing.Point(6, 374);
+            this.txtMensaje.Name = "txtMensaje";
+            this.txtMensaje.Size = new System.Drawing.Size(240, 21);
+            this.txtMensaje.TabIndex = 18;
+            this.txtMensaje.Text = "Ingrese mensaje a enviar";
+            // 
             // grpBuscarConsultas1
             // 
+            this.grpBuscarConsultas1.BackColor = System.Drawing.Color.DodgerBlue;
             this.grpBuscarConsultas1.Controls.Add(this.btnBuscar1);
             this.grpBuscarConsultas1.Controls.Add(this.txtConsulta);
             this.grpBuscarConsultas1.Controls.Add(this.dtgMostrarConsultas);
+            this.grpBuscarConsultas1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.grpBuscarConsultas1.ForeColor = System.Drawing.Color.White;
             this.grpBuscarConsultas1.Location = new System.Drawing.Point(321, 6);
             this.grpBuscarConsultas1.Name = "grpBuscarConsultas1";
             this.grpBuscarConsultas1.Size = new System.Drawing.Size(476, 111);
@@ -195,46 +223,30 @@
             this.grpBuscarConsultas1.Text = "Temas de consultas";
             this.grpBuscarConsultas1.Visible = false;
             // 
-            // txtConsulta
-            // 
-            this.txtConsulta.Location = new System.Drawing.Point(6, 78);
-            this.txtConsulta.Name = "txtConsulta";
-            this.txtConsulta.Size = new System.Drawing.Size(240, 20);
-            this.txtConsulta.TabIndex = 19;
-            this.txtConsulta.Text = "Ingrese tema para mostrar la consulta";
-            // 
             // btnBuscar1
             // 
+            this.btnBuscar1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar1.Location = new System.Drawing.Point(271, 77);
             this.btnBuscar1.Name = "btnBuscar1";
-            this.btnBuscar1.Size = new System.Drawing.Size(65, 20);
+            this.btnBuscar1.Size = new System.Drawing.Size(65, 22);
             this.btnBuscar1.TabIndex = 19;
             this.btnBuscar1.Text = "Buscar";
             this.btnBuscar1.UseVisualStyleBackColor = true;
             this.btnBuscar1.Click += new System.EventHandler(this.btnBuscar1_Click);
             // 
-            // label2
+            // txtConsulta
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Tu respuestas";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(261, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 13);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Mensaje Recibido";
+            this.txtConsulta.Location = new System.Drawing.Point(6, 78);
+            this.txtConsulta.Name = "txtConsulta";
+            this.txtConsulta.Size = new System.Drawing.Size(240, 21);
+            this.txtConsulta.TabIndex = 19;
+            this.txtConsulta.Text = "Ingrese tema para mostrar la consulta";
             // 
             // consultaProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(800, 547);
             this.Controls.Add(this.grpBuscarConsultas1);
             this.Controls.Add(this.grpMostrarConsultas);

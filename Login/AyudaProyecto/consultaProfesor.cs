@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using AyudaProyecto.Properties;
 
 namespace AyudaProyecto
 {
@@ -17,7 +18,13 @@ namespace AyudaProyecto
         {
             InitializeComponent();
         }
+
+        class consultaPorefsor : AyudaProyecto.Properties.Form1
+        {
+            
+        }
         string tema;
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -71,6 +78,11 @@ namespace AyudaProyecto
             DataTable tablaMensajesP = new DataTable();
             adaptador.Fill(tablaMensajesP);
             dtgMensajeP.DataSource = tablaMensajesP;
+        }
+
+        private void dtgMensajeP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

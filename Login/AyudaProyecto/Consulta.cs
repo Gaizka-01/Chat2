@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using CapaLogica;
 namespace AyudaProyecto
 {
     public partial class Consulta : Form
@@ -87,6 +87,16 @@ namespace AyudaProyecto
             adaptador.Fill(tablaP);
             dtgMensajeP.DataSource = tablaP;
             grpNuevaConsulta.Visible = true;
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }

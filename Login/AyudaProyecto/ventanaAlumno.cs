@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using CapaLogica;
+
 
 namespace AyudaProyecto
 {
@@ -18,6 +20,7 @@ namespace AyudaProyecto
             InitializeComponent();
         }
 
+      
         private void btnMostar_Click(object sender, EventArgs e)
         {
             MySqlConnection conectar = new MySqlConnection("server = 127.0.0.2; port = 3306; database = bdsistema; Uid = root; pwd = MalvinyBolso;");
@@ -41,5 +44,7 @@ namespace AyudaProyecto
             nuevo.Show();
             this.Hide();
         }
+
+       
     }
 }

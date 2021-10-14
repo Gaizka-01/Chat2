@@ -35,13 +35,13 @@
             this.btnLegajo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.pNuevo = new System.Windows.Forms.Panel();
+            this.btnConsulta = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnMostar = new System.Windows.Forms.Button();
+            this.dgNuevo = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblNuevo = new System.Windows.Forms.Label();
-            this.btnMostar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnConsulta = new System.Windows.Forms.Button();
-            this.dgNuevo = new System.Windows.Forms.DataGridView();
             this.pOpicones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pNuevo.SuspendLayout();
@@ -59,7 +59,7 @@
             this.pOpicones.Controls.Add(this.btnEditar);
             this.pOpicones.Location = new System.Drawing.Point(12, 12);
             this.pOpicones.Name = "pOpicones";
-            this.pOpicones.Size = new System.Drawing.Size(181, 223);
+            this.pOpicones.Size = new System.Drawing.Size(181, 232);
             this.pOpicones.TabIndex = 5;
             // 
             // lblNombreConfig
@@ -145,6 +145,47 @@
             this.pNuevo.Size = new System.Drawing.Size(592, 420);
             this.pNuevo.TabIndex = 6;
             // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Location = new System.Drawing.Point(366, 339);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(127, 36);
+            this.btnConsulta.TabIndex = 22;
+            this.btnConsulta.Text = "Nueva Consulta";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(224, 339);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 36);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Nuevo Chat";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnMostar
+            // 
+            this.btnMostar.Location = new System.Drawing.Point(71, 339);
+            this.btnMostar.Name = "btnMostar";
+            this.btnMostar.Size = new System.Drawing.Size(136, 36);
+            this.btnMostar.TabIndex = 20;
+            this.btnMostar.Text = "Mostrar Profesores";
+            this.btnMostar.UseVisualStyleBackColor = true;
+            this.btnMostar.Click += new System.EventHandler(this.btnMostar_Click);
+            // 
+            // dgNuevo
+            // 
+            this.dgNuevo.AllowUserToAddRows = false;
+            this.dgNuevo.AllowUserToDeleteRows = false;
+            this.dgNuevo.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.dgNuevo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgNuevo.Location = new System.Drawing.Point(71, 115);
+            this.dgNuevo.Name = "dgNuevo";
+            this.dgNuevo.ReadOnly = true;
+            this.dgNuevo.Size = new System.Drawing.Size(422, 218);
+            this.dgNuevo.TabIndex = 19;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
@@ -179,47 +220,6 @@
             this.lblNuevo.Size = new System.Drawing.Size(70, 23);
             this.lblNuevo.TabIndex = 11;
             this.lblNuevo.Text = "Nuevo";
-            // 
-            // btnMostar
-            // 
-            this.btnMostar.Location = new System.Drawing.Point(71, 339);
-            this.btnMostar.Name = "btnMostar";
-            this.btnMostar.Size = new System.Drawing.Size(136, 36);
-            this.btnMostar.TabIndex = 20;
-            this.btnMostar.Text = "Mostrar Profesores";
-            this.btnMostar.UseVisualStyleBackColor = true;
-            this.btnMostar.Click += new System.EventHandler(this.btnMostar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(224, 339);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 36);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Nuevo Chat";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnConsulta
-            // 
-            this.btnConsulta.Location = new System.Drawing.Point(366, 339);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(127, 36);
-            this.btnConsulta.TabIndex = 22;
-            this.btnConsulta.Text = "Nueva Consulta";
-            this.btnConsulta.UseVisualStyleBackColor = true;
-            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
-            // 
-            // dgNuevo
-            // 
-            this.dgNuevo.AllowUserToAddRows = false;
-            this.dgNuevo.AllowUserToDeleteRows = false;
-            this.dgNuevo.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.dgNuevo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgNuevo.Location = new System.Drawing.Point(71, 115);
-            this.dgNuevo.Name = "dgNuevo";
-            this.dgNuevo.ReadOnly = true;
-            this.dgNuevo.Size = new System.Drawing.Size(422, 218);
-            this.dgNuevo.TabIndex = 19;
             // 
             // ventanaAlumno
             // 

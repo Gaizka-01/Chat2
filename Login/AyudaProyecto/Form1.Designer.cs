@@ -33,12 +33,24 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAcceder = new System.Windows.Forms.Button();
-            this.lblIngresa = new System.Windows.Forms.Label();
             this.groupUsuario = new System.Windows.Forms.GroupBox();
-            this.chkboxAdministrador = new System.Windows.Forms.CheckBox();
-            this.chkboxProfesor = new System.Windows.Forms.CheckBox();
-            this.chkboxAlumno = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.picAlumno = new System.Windows.Forms.PictureBox();
+            this.picDocente = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Logo = new System.Windows.Forms.PictureBox();
+            this.lblMenssages = new System.Windows.Forms.Label();
             this.groupUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAlumno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDocente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // tbUsuario
@@ -73,7 +85,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.DimGray;
-            this.btnRegistrar.Location = new System.Drawing.Point(12, 375);
+            this.btnRegistrar.Location = new System.Drawing.Point(12, 336);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 103;
@@ -97,6 +109,7 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Visible = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnAcceder
             // 
@@ -114,67 +127,155 @@
             this.btnAcceder.Visible = false;
             this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
-            // lblIngresa
-            // 
-            this.lblIngresa.AutoSize = true;
-            this.lblIngresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngresa.ForeColor = System.Drawing.Color.White;
-            this.lblIngresa.Location = new System.Drawing.Point(255, 105);
-            this.lblIngresa.Name = "lblIngresa";
-            this.lblIngresa.Size = new System.Drawing.Size(287, 16);
-            this.lblIngresa.TabIndex = 106;
-            this.lblIngresa.Text = "Ingresa a la aplicacion que te pertenece";
-            // 
             // groupUsuario
             // 
-            this.groupUsuario.Controls.Add(this.chkboxAdministrador);
-            this.groupUsuario.Controls.Add(this.chkboxProfesor);
-            this.groupUsuario.Controls.Add(this.chkboxAlumno);
-            this.groupUsuario.Location = new System.Drawing.Point(258, 133);
+            this.groupUsuario.Controls.Add(this.label5);
+            this.groupUsuario.Controls.Add(this.label4);
+            this.groupUsuario.Controls.Add(this.pictureBox4);
+            this.groupUsuario.Controls.Add(this.label3);
+            this.groupUsuario.Controls.Add(this.label2);
+            this.groupUsuario.Controls.Add(this.label1);
+            this.groupUsuario.Controls.Add(this.picAlumno);
+            this.groupUsuario.Controls.Add(this.picDocente);
+            this.groupUsuario.Controls.Add(this.pictureBox1);
+            this.groupUsuario.Location = new System.Drawing.Point(93, 12);
             this.groupUsuario.Name = "groupUsuario";
-            this.groupUsuario.Size = new System.Drawing.Size(281, 169);
+            this.groupUsuario.Size = new System.Drawing.Size(584, 373);
             this.groupUsuario.TabIndex = 125;
             this.groupUsuario.TabStop = false;
             this.groupUsuario.Text = "Seleccione un usuario";
             // 
-            // chkboxAdministrador
+            // label5
             // 
-            this.chkboxAdministrador.AutoSize = true;
-            this.chkboxAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkboxAdministrador.ForeColor = System.Drawing.Color.White;
-            this.chkboxAdministrador.Location = new System.Drawing.Point(6, 65);
-            this.chkboxAdministrador.Name = "chkboxAdministrador";
-            this.chkboxAdministrador.Size = new System.Drawing.Size(115, 19);
-            this.chkboxAdministrador.TabIndex = 2;
-            this.chkboxAdministrador.Text = "Administrador";
-            this.chkboxAdministrador.UseVisualStyleBackColor = true;
-            this.chkboxAdministrador.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(120, 134);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(329, 21);
+            this.label5.TabIndex = 135;
+            this.label5.Text = "Ingrese a la aplicacion que te pertenece";
             // 
-            // chkboxProfesor
+            // label4
             // 
-            this.chkboxProfesor.AutoSize = true;
-            this.chkboxProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkboxProfesor.ForeColor = System.Drawing.Color.White;
-            this.chkboxProfesor.Location = new System.Drawing.Point(6, 42);
-            this.chkboxProfesor.Name = "chkboxProfesor";
-            this.chkboxProfesor.Size = new System.Drawing.Size(80, 19);
-            this.chkboxProfesor.TabIndex = 1;
-            this.chkboxProfesor.Text = "Profesor";
-            this.chkboxProfesor.UseVisualStyleBackColor = true;
-            this.chkboxProfesor.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Black;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(214, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 25);
+            this.label4.TabIndex = 134;
+            this.label4.Text = "Messages";
             // 
-            // chkboxAlumno
+            // pictureBox4
             // 
-            this.chkboxAlumno.AutoSize = true;
-            this.chkboxAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkboxAlumno.ForeColor = System.Drawing.Color.White;
-            this.chkboxAlumno.Location = new System.Drawing.Point(6, 19);
-            this.chkboxAlumno.Name = "chkboxAlumno";
-            this.chkboxAlumno.Size = new System.Drawing.Size(74, 19);
-            this.chkboxAlumno.TabIndex = 0;
-            this.chkboxAlumno.Text = "Alumno";
-            this.chkboxAlumno.UseVisualStyleBackColor = true;
-            this.chkboxAlumno.CheckedChanged += new System.EventHandler(this.chkboxAlumno_CheckedChanged);
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = global::AyudaProyecto.Properties.Resources.icono;
+            this.pictureBox4.Location = new System.Drawing.Point(219, 13);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(100, 81);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 133;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(41, 266);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 21);
+            this.label3.TabIndex = 132;
+            this.label3.Text = "Administrador";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(233, 266);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 21);
+            this.label2.TabIndex = 131;
+            this.label2.Text = "Docente";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(403, 266);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 21);
+            this.label1.TabIndex = 130;
+            this.label1.Text = "Alumno";
+            // 
+            // picAlumno
+            // 
+            this.picAlumno.BackColor = System.Drawing.Color.DarkGray;
+            this.picAlumno.Image = global::AyudaProyecto.Properties.Resources.usuario;
+            this.picAlumno.Location = new System.Drawing.Point(385, 176);
+            this.picAlumno.Name = "picAlumno";
+            this.picAlumno.Size = new System.Drawing.Size(100, 81);
+            this.picAlumno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAlumno.TabIndex = 129;
+            this.picAlumno.TabStop = false;
+            this.picAlumno.Click += new System.EventHandler(this.picAlumno_Click);
+            // 
+            // picDocente
+            // 
+            this.picDocente.BackColor = System.Drawing.Color.DarkGray;
+            this.picDocente.Image = global::AyudaProyecto.Properties.Resources.profesor;
+            this.picDocente.Location = new System.Drawing.Point(219, 176);
+            this.picDocente.Name = "picDocente";
+            this.picDocente.Size = new System.Drawing.Size(109, 81);
+            this.picDocente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDocente.TabIndex = 128;
+            this.picDocente.TabStop = false;
+            this.picDocente.Click += new System.EventHandler(this.picDocente_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox1.Image = global::AyudaProyecto.Properties.Resources.configuraciones;
+            this.pictureBox1.Location = new System.Drawing.Point(45, 176);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(112, 81);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 127;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // Logo
+            // 
+            this.Logo.BackColor = System.Drawing.Color.Transparent;
+            this.Logo.Image = global::AyudaProyecto.Properties.Resources.icono;
+            this.Logo.Location = new System.Drawing.Point(305, 30);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(100, 81);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo.TabIndex = 136;
+            this.Logo.TabStop = false;
+            this.Logo.Visible = false;
+            // 
+            // lblMenssages
+            // 
+            this.lblMenssages.AutoSize = true;
+            this.lblMenssages.BackColor = System.Drawing.Color.Black;
+            this.lblMenssages.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenssages.ForeColor = System.Drawing.Color.White;
+            this.lblMenssages.Location = new System.Drawing.Point(300, 114);
+            this.lblMenssages.Name = "lblMenssages";
+            this.lblMenssages.Size = new System.Drawing.Size(112, 25);
+            this.lblMenssages.TabIndex = 136;
+            this.lblMenssages.Text = "Messages";
+            this.lblMenssages.Visible = false;
             // 
             // Form1
             // 
@@ -182,8 +283,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblMenssages);
+            this.Controls.Add(this.Logo);
             this.Controls.Add(this.groupUsuario);
-            this.Controls.Add(this.lblIngresa);
             this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnRegistrar);
@@ -193,6 +295,11 @@
             this.Text = "Login";
             this.groupUsuario.ResumeLayout(false);
             this.groupUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAlumno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDocente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,10 +311,17 @@
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAcceder;
-        private System.Windows.Forms.Label lblIngresa;
         private System.Windows.Forms.GroupBox groupUsuario;
-        private System.Windows.Forms.CheckBox chkboxAdministrador;
-        private System.Windows.Forms.CheckBox chkboxProfesor;
-        private System.Windows.Forms.CheckBox chkboxAlumno;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox picAlumno;
+        private System.Windows.Forms.PictureBox picDocente;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.Label lblMenssages;
     }
 }

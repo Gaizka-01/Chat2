@@ -135,11 +135,31 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Resources\ProfesorB.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder2\" />
-    <Folder Include="NewFolder3\" />
+    <None Include="Resources\AlumnoB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuraciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profesor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
+      <Project>{ca29face-a1fb-484e-8c08-d19f62a14b26}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
