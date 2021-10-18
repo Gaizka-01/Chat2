@@ -37,6 +37,8 @@
             this.txtConsulta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grpConsulta = new System.Windows.Forms.GroupBox();
+            this.txtMateria = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -46,8 +48,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.grpConsultasAnt = new System.Windows.Forms.GroupBox();
             this.txtBuscarConsulta = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtMateria = new System.Windows.Forms.TextBox();
+            this.pOpicones = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnChats = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblNombreConfig = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dgNuevo = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pNuevo = new System.Windows.Forms.Panel();
+            this.btnEnviarMensaje = new System.Windows.Forms.PictureBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblUsuarioContesta = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtM = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMensajesA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultasAnt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMensajeP)).BeginInit();
@@ -55,6 +72,14 @@
             this.groupBox1.SuspendLayout();
             this.grpNuevaConsulta.SuspendLayout();
             this.grpConsultasAnt.SuspendLayout();
+            this.pOpicones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgNuevo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.pNuevo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarMensaje)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgMensajesA
@@ -137,13 +162,30 @@
             this.grpConsulta.Controls.Add(this.txtConsulta);
             this.grpConsulta.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.grpConsulta.ForeColor = System.Drawing.Color.White;
-            this.grpConsulta.Location = new System.Drawing.Point(3, 143);
+            this.grpConsulta.Location = new System.Drawing.Point(12, 508);
             this.grpConsulta.Name = "grpConsulta";
-            this.grpConsulta.Size = new System.Drawing.Size(168, 274);
+            this.grpConsulta.Size = new System.Drawing.Size(168, 28);
             this.grpConsulta.TabIndex = 9;
             this.grpConsulta.TabStop = false;
             this.grpConsulta.Text = "Nueva Consulta";
             this.grpConsulta.Visible = false;
+            // 
+            // txtMateria
+            // 
+            this.txtMateria.Location = new System.Drawing.Point(6, 122);
+            this.txtMateria.Name = "txtMateria";
+            this.txtMateria.Size = new System.Drawing.Size(116, 21);
+            this.txtMateria.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label4.Location = new System.Drawing.Point(3, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(167, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Escriba nombre de la materia";
             // 
             // btnAceptar
             // 
@@ -162,9 +204,9 @@
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(3, 12);
+            this.groupBox1.Location = new System.Drawing.Point(183, 555);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(159, 123);
+            this.groupBox1.Size = new System.Drawing.Size(159, 19);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione una opcion";
@@ -207,9 +249,9 @@
             this.grpNuevaConsulta.Controls.Add(this.dtgMensajesA);
             this.grpNuevaConsulta.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.grpNuevaConsulta.ForeColor = System.Drawing.Color.White;
-            this.grpNuevaConsulta.Location = new System.Drawing.Point(177, 11);
+            this.grpNuevaConsulta.Location = new System.Drawing.Point(360, 546);
             this.grpNuevaConsulta.Name = "grpNuevaConsulta";
-            this.grpNuevaConsulta.Size = new System.Drawing.Size(460, 427);
+            this.grpNuevaConsulta.Size = new System.Drawing.Size(274, 28);
             this.grpNuevaConsulta.TabIndex = 25;
             this.grpNuevaConsulta.TabStop = false;
             this.grpNuevaConsulta.Text = "Nueva Consulta";
@@ -244,9 +286,9 @@
             this.grpConsultasAnt.Controls.Add(this.dtgConsultasAnt);
             this.grpConsultasAnt.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.grpConsultasAnt.ForeColor = System.Drawing.Color.White;
-            this.grpConsultasAnt.Location = new System.Drawing.Point(646, 12);
+            this.grpConsultasAnt.Location = new System.Drawing.Point(385, 470);
             this.grpConsultasAnt.Name = "grpConsultasAnt";
-            this.grpConsultasAnt.Size = new System.Drawing.Size(195, 426);
+            this.grpConsultasAnt.Size = new System.Drawing.Size(195, 28);
             this.grpConsultasAnt.TabIndex = 26;
             this.grpConsultasAnt.TabStop = false;
             this.grpConsultasAnt.Text = "Consultas anteriores";
@@ -260,35 +302,218 @@
             this.txtBuscarConsulta.TabIndex = 10;
             this.txtBuscarConsulta.Text = "Inserte tema";
             // 
-            // label4
+            // pOpicones
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.label4.Location = new System.Drawing.Point(3, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 16);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Escriba nombre de la materia";
+            this.pOpicones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.pOpicones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pOpicones.Controls.Add(this.button1);
+            this.pOpicones.Controls.Add(this.btnChats);
+            this.pOpicones.Controls.Add(this.panel2);
+            this.pOpicones.Controls.Add(this.panel1);
+            this.pOpicones.Controls.Add(this.label5);
+            this.pOpicones.Controls.Add(this.lblNombreConfig);
+            this.pOpicones.Controls.Add(this.pictureBox2);
+            this.pOpicones.Controls.Add(this.dgNuevo);
+            this.pOpicones.Controls.Add(this.textBox1);
+            this.pOpicones.Controls.Add(this.pictureBox5);
+            this.pOpicones.Location = new System.Drawing.Point(13, 12);
+            this.pOpicones.Name = "pOpicones";
+            this.pOpicones.Size = new System.Drawing.Size(250, 426);
+            this.pOpicones.TabIndex = 27;
             // 
-            // txtMateria
+            // button1
             // 
-            this.txtMateria.Location = new System.Drawing.Point(6, 122);
-            this.txtMateria.Name = "txtMateria";
-            this.txtMateria.Size = new System.Drawing.Size(116, 21);
-            this.txtMateria.TabIndex = 11;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(11, 379);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 26);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Consultas";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnChats
+            // 
+            this.btnChats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.btnChats.FlatAppearance.BorderSize = 0;
+            this.btnChats.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnChats.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnChats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChats.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChats.ForeColor = System.Drawing.Color.White;
+            this.btnChats.Location = new System.Drawing.Point(154, 379);
+            this.btnChats.Name = "btnChats";
+            this.btnChats.Size = new System.Drawing.Size(83, 26);
+            this.btnChats.TabIndex = 26;
+            this.btnChats.Text = "Chats";
+            this.btnChats.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(202, 9);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 47);
+            this.panel2.TabIndex = 14;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(11, 66);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(224, 1);
+            this.panel1.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.LightGray;
+            this.label5.Location = new System.Drawing.Point(209, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 18);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "3ba";
+            // 
+            // lblNombreConfig
+            // 
+            this.lblNombreConfig.AutoSize = true;
+            this.lblNombreConfig.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreConfig.ForeColor = System.Drawing.Color.LightGray;
+            this.lblNombreConfig.Location = new System.Drawing.Point(64, 17);
+            this.lblNombreConfig.Name = "lblNombreConfig";
+            this.lblNombreConfig.Size = new System.Drawing.Size(135, 18);
+            this.lblNombreConfig.TabIndex = 11;
+            this.lblNombreConfig.Text = "Nombre Apellido";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::AyudaProyecto.Properties.Resources.usuario1;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 51);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // dgNuevo
+            // 
+            this.dgNuevo.AllowUserToAddRows = false;
+            this.dgNuevo.AllowUserToDeleteRows = false;
+            this.dgNuevo.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.dgNuevo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgNuevo.Location = new System.Drawing.Point(3, 104);
+            this.dgNuevo.Name = "dgNuevo";
+            this.dgNuevo.ReadOnly = true;
+            this.dgNuevo.Size = new System.Drawing.Size(242, 257);
+            this.dgNuevo.TabIndex = 19;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 78);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(210, 20);
+            this.textBox1.TabIndex = 15;
+            this.textBox1.Text = "Buscar";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::AyudaProyecto.Properties.Resources.Link;
+            this.pictureBox5.Location = new System.Drawing.Point(222, 78);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(23, 20);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pNuevo
+            // 
+            this.pNuevo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pNuevo.Controls.Add(this.btnEnviarMensaje);
+            this.pNuevo.Controls.Add(this.groupBox5);
+            this.pNuevo.Controls.Add(this.pictureBox1);
+            this.pNuevo.Controls.Add(this.txtM);
+            this.pNuevo.Location = new System.Drawing.Point(269, 12);
+            this.pNuevo.Name = "pNuevo";
+            this.pNuevo.Size = new System.Drawing.Size(522, 426);
+            this.pNuevo.TabIndex = 28;
+            // 
+            // btnEnviarMensaje
+            // 
+            this.btnEnviarMensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.btnEnviarMensaje.Image = global::AyudaProyecto.Properties.Resources.enviar;
+            this.btnEnviarMensaje.Location = new System.Drawing.Point(485, 384);
+            this.btnEnviarMensaje.Name = "btnEnviarMensaje";
+            this.btnEnviarMensaje.Size = new System.Drawing.Size(24, 23);
+            this.btnEnviarMensaje.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEnviarMensaje.TabIndex = 22;
+            this.btnEnviarMensaje.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.groupBox5.Controls.Add(this.lblUsuarioContesta);
+            this.groupBox5.Location = new System.Drawing.Point(0, -6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(521, 65);
+            this.groupBox5.TabIndex = 25;
+            this.groupBox5.TabStop = false;
+            // 
+            // lblUsuarioContesta
+            // 
+            this.lblUsuarioContesta.AutoSize = true;
+            this.lblUsuarioContesta.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuarioContesta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioContesta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(162)))), ((int)(((byte)(162)))));
+            this.lblUsuarioContesta.Location = new System.Drawing.Point(6, 27);
+            this.lblUsuarioContesta.Name = "lblUsuarioContesta";
+            this.lblUsuarioContesta.Size = new System.Drawing.Size(42, 17);
+            this.lblUsuarioContesta.TabIndex = 11;
+            this.lblUsuarioContesta.Text = "Para:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.pictureBox1.Image = global::AyudaProyecto.Properties.Resources.Link;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 384);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(21, 23);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtM
+            // 
+            this.txtM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.txtM.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(162)))), ((int)(((byte)(162)))));
+            this.txtM.Location = new System.Drawing.Point(56, 384);
+            this.txtM.Name = "txtM";
+            this.txtM.Size = new System.Drawing.Size(417, 23);
+            this.txtM.TabIndex = 21;
+            this.txtM.Text = "Message";
             // 
             // Consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(853, 450);
+            this.ClientSize = new System.Drawing.Size(798, 586);
+            this.Controls.Add(this.pNuevo);
+            this.Controls.Add(this.pOpicones);
             this.Controls.Add(this.grpConsultasAnt);
             this.Controls.Add(this.grpConsulta);
             this.Controls.Add(this.grpNuevaConsulta);
             this.Controls.Add(this.groupBox1);
             this.Name = "Consulta";
-            this.Text = "Consulta";
+            this.Text = "v";
             ((System.ComponentModel.ISupportInitialize)(this.dtgMensajesA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultasAnt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMensajeP)).EndInit();
@@ -300,6 +525,17 @@
             this.grpNuevaConsulta.PerformLayout();
             this.grpConsultasAnt.ResumeLayout(false);
             this.grpConsultasAnt.PerformLayout();
+            this.pOpicones.ResumeLayout(false);
+            this.pOpicones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgNuevo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.pNuevo.ResumeLayout(false);
+            this.pNuevo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarMensaje)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,5 +562,22 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMateria;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel pOpicones;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnChats;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblNombreConfig;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridView dgNuevo;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel pNuevo;
+        private System.Windows.Forms.PictureBox btnEnviarMensaje;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label lblUsuarioContesta;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtM;
     }
 }

@@ -40,24 +40,28 @@ namespace AyudaProyecto.Properties
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            MySqlConnection conectar = new MySqlConnection("server = 127.0.0.2; port = 3306; database = bdsistema; Uid = root; pwd = MalvinyBolso;");
-            conectar.Open();
-            MySqlCommand comando = new MySqlCommand("Select usuario, Contraseña from Persona where usuario = ' "+ tbUsuario.Text +" ' and Contraseña = '"+ tbContraseña.Text +"'", conectar);
+            CapaLogica.ConexionBD.Conexion();
+            CapaLogica.ConexionBD.conectar.Open();
+            MySqlCommand comando = new MySqlCommand("Select usuario, Contraseña from Persona where usuario = ' "+ tbUsuario.Text +" ' and Contraseña = '"+ tbContraseña.Text +"'", CapaLogica.ConexionBD.conectar);
             MySqlDataReader verificar = comando.ExecuteReader();
 
             if (tipoUsu == "alumno" && verificar.Read()) {
-                CapaLogica.DatoUsu.NombreUsu = tbUsuario.Text;
+                CapaLogica.DatoUsu.CIUsu = int.Parse(txtCI.Text);
                
                 ventanaAlumno nueva = new ventanaAlumno();
             nueva.Show();
             this.Hide();
+                CapaLogica.ConexionBD.conectar.Close();
             } else if (tipoUsu == "docente" && verificar.Read())
             {
-                CapaLogica.DatoUsu.NombreUsu = tbUsuario.Text;
+                CapaLogica.DatoUsu.CIUsu = int.Parse(txtCI.Text);
                 ventanaProfesor nuevaP = new ventanaProfesor();
                 nuevaP.Show();
                 this.Hide();
-            } else
+                CapaLogica.ConexionBD.conectar.Close();
+
+            }
+            else
             {
                 MessageBox.Show("No se encontro ningun usuario");
             }
@@ -78,6 +82,7 @@ namespace AyudaProyecto.Properties
             groupUsuario.Visible = false;
             Logo.Visible = true;
             lblMenssages.Visible = true;
+            txtCI.Visible = true;
             tipoUsu = "admin";
         }
 
@@ -91,6 +96,7 @@ namespace AyudaProyecto.Properties
             groupUsuario.Visible = false;
             Logo.Visible = true;
             lblMenssages.Visible = true;
+            txtCI.Visible = true;
             tipoUsu = "docente";
         }
 
@@ -104,6 +110,7 @@ namespace AyudaProyecto.Properties
             groupUsuario.Visible = false;
             Logo.Visible = true;
             lblMenssages.Visible = true;
+            txtCI.Visible = true;
             tipoUsu = "alumno";
         }
 
@@ -117,7 +124,8 @@ namespace AyudaProyecto.Properties
             groupUsuario.Visible = true;
             Logo.Visible = false;
             lblMenssages.Visible = false;
-            //tipoUsu = "";
+            txtCI.Visible = false;
+
         }
 
        

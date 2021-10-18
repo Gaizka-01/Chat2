@@ -23,14 +23,10 @@ namespace AyudaProyecto
       
         private void btnMostar_Click(object sender, EventArgs e)
         {
-            MySqlConnection conectar = new MySqlConnection("server = 127.0.0.2; port = 3306; database = bdsistema; Uid = root; pwd = MalvinyBolso;");
-            conectar.Open();
-            MySqlCommand comando = new MySqlCommand("Select persona.Nombre, docente.Materia from persona, docente where persona.CI = docente.CI", conectar);
-            MySqlDataAdapter adaptador = new MySqlDataAdapter();
-            adaptador.SelectCommand = comando;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dgNuevo.DataSource = tabla;
+            CapaLogica.ConexionBD.Conexion();
+            CapaLogica.ConexionBD.conectar.Open();
+            MySqlCommand comando = new MySqlCommand("Select persona.Nombre, docente.Materia from persona, docente where persona.CI = docente.CI", CapaLogica.ConexionBD.conectar);
+        
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,11 +36,66 @@ namespace AyudaProyecto
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+      
+
+        private void lblNombreConfig_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCrearChat_Click(object sender, EventArgs e)
+        {
             Consulta nuevo = new Consulta();
             nuevo.Show();
             this.Hide();
         }
 
-       
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            fondoCrear.Visible = true;
+            grpCrear.Visible = true;
+        }
+
+        private void btnCancelarCrear_Click(object sender, EventArgs e)
+        {
+            fondoCrear.Visible = false;
+            grpCrear.Visible = false;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultas_Click(object sender, EventArgs e)
+        {
+            CapaLogica.ConexionBD.Conexion();
+            MySqlCommand comando = new MySqlCommand("Select tema From consulta where CI = '" + CapaLogica.DatoUsu.CIUsu +"' group by tema;", CapaLogica.ConexionBD.conectar);
+            MySqlDataAdapter adaptador = new MySqlDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgNuevo.DataSource = tabla;
+            CapaLogica.ConexionBD.CerrarConexion();
+
+        }
     }
 }

@@ -99,5 +99,17 @@ namespace AyudaProyecto
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CapaLogica.ConexionBD.Conexion();
+            MySqlCommand comando = new MySqlCommand("Select tema From consulta where CI = '" + CapaLogica.DatoUsu.CIUsu + "' group by tema;", CapaLogica.ConexionBD.conectar);
+            MySqlDataAdapter adaptador = new MySqlDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgNuevo.DataSource = tabla;
+            CapaLogica.ConexionBD.CerrarConexion();
+        }
     }
 }

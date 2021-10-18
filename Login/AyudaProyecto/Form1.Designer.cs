@@ -45,6 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.lblMenssages = new System.Windows.Forms.Label();
+            this.txtCI = new System.Windows.Forms.TextBox();
             this.groupUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAlumno)).BeginInit();
@@ -72,7 +73,7 @@
             this.tbContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbContraseña.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbContraseña.ForeColor = System.Drawing.Color.DimGray;
-            this.tbContraseña.Location = new System.Drawing.Point(233, 205);
+            this.tbContraseña.Location = new System.Drawing.Point(233, 231);
             this.tbContraseña.Name = "tbContraseña";
             this.tbContraseña.Size = new System.Drawing.Size(306, 20);
             this.tbContraseña.TabIndex = 6;
@@ -138,17 +139,16 @@
             this.groupUsuario.Controls.Add(this.picAlumno);
             this.groupUsuario.Controls.Add(this.picDocente);
             this.groupUsuario.Controls.Add(this.pictureBox1);
-            this.groupUsuario.Location = new System.Drawing.Point(93, 12);
+            this.groupUsuario.Location = new System.Drawing.Point(132, 7);
             this.groupUsuario.Name = "groupUsuario";
             this.groupUsuario.Size = new System.Drawing.Size(584, 373);
             this.groupUsuario.TabIndex = 125;
             this.groupUsuario.TabStop = false;
-            this.groupUsuario.Text = "Seleccione un usuario";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(120, 134);
@@ -183,7 +183,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(41, 266);
@@ -195,7 +195,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(233, 266);
@@ -207,7 +207,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(403, 266);
@@ -267,7 +267,7 @@
             // lblMenssages
             // 
             this.lblMenssages.AutoSize = true;
-            this.lblMenssages.BackColor = System.Drawing.Color.Black;
+            this.lblMenssages.BackColor = System.Drawing.Color.Transparent;
             this.lblMenssages.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMenssages.ForeColor = System.Drawing.Color.White;
             this.lblMenssages.Location = new System.Drawing.Point(300, 114);
@@ -277,12 +277,25 @@
             this.lblMenssages.Text = "Messages";
             this.lblMenssages.Visible = false;
             // 
+            // txtCI
+            // 
+            this.txtCI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.txtCI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCI.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCI.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCI.Location = new System.Drawing.Point(233, 205);
+            this.txtCI.Name = "txtCI";
+            this.txtCI.Size = new System.Drawing.Size(306, 20);
+            this.txtCI.TabIndex = 137;
+            this.txtCI.Text = "Cedula";
+            this.txtCI.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 392);
             this.Controls.Add(this.lblMenssages);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.groupUsuario);
@@ -291,6 +304,7 @@
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.tbContraseña);
             this.Controls.Add(this.tbUsuario);
+            this.Controls.Add(this.txtCI);
             this.Name = "Form1";
             this.Text = "Login";
             this.groupUsuario.ResumeLayout(false);
@@ -323,5 +337,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Label lblMenssages;
+        private System.Windows.Forms.TextBox txtCI;
     }
 }

@@ -13,7 +13,7 @@ namespace CapaLogica
     
     public class DatoUsu
     {
-        public static string NombreUsu { get; set; }
+        public static int CIUsu { get; set; }
 
     }
 }
