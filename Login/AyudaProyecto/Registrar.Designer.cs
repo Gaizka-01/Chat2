@@ -43,6 +43,7 @@
             this.lblMateria = new System.Windows.Forms.Label();
             this.lbGrupos = new System.Windows.Forms.ListBox();
             this.lbMateria = new System.Windows.Forms.ListBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -124,7 +125,7 @@
             this.tbCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbCedula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCedula.ForeColor = System.Drawing.Color.DimGray;
-            this.tbCedula.Location = new System.Drawing.Point(282, 164);
+            this.tbCedula.Location = new System.Drawing.Point(282, 190);
             this.tbCedula.Name = "tbCedula";
             this.tbCedula.Size = new System.Drawing.Size(422, 20);
             this.tbCedula.TabIndex = 108;
@@ -136,7 +137,7 @@
             this.tbContra.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbContra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbContra.ForeColor = System.Drawing.Color.DimGray;
-            this.tbContra.Location = new System.Drawing.Point(282, 199);
+            this.tbContra.Location = new System.Drawing.Point(282, 213);
             this.tbContra.Name = "tbContra";
             this.tbContra.Size = new System.Drawing.Size(422, 20);
             this.tbContra.TabIndex = 109;
@@ -149,7 +150,7 @@
             this.tbContra2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbContra2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbContra2.ForeColor = System.Drawing.Color.DimGray;
-            this.tbContra2.Location = new System.Drawing.Point(282, 235);
+            this.tbContra2.Location = new System.Drawing.Point(282, 241);
             this.tbContra2.Name = "tbContra2";
             this.tbContra2.Size = new System.Drawing.Size(422, 20);
             this.tbContra2.TabIndex = 110;
@@ -245,12 +246,25 @@
             this.lbMateria.TabIndex = 128;
             this.lbMateria.Visible = false;
             // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
+            this.txtUsuario.Location = new System.Drawing.Point(282, 164);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(422, 20);
+            this.txtUsuario.TabIndex = 129;
+            this.txtUsuario.Text = "Nombre de usuario";
+            // 
             // Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lbMateria);
             this.Controls.Add(this.lbGrupos);
             this.Controls.Add(this.lblMateria);
@@ -290,5 +304,6 @@
         private System.Windows.Forms.Label lblMateria;
         private System.Windows.Forms.ListBox lbGrupos;
         private System.Windows.Forms.ListBox lbMateria;
+        private System.Windows.Forms.TextBox txtUsuario;
     }
 }

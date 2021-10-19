@@ -47,6 +47,7 @@ namespace AyudaProyecto.Properties
 
             if (tipoUsu == "alumno" && verificar.Read()) {
                 CapaLogica.DatoUsu.CIUsu = int.Parse(txtCI.Text);
+                CapaLogica.DatoUsu.NombreUsu = tbUsuario.Text;
                
                 ventanaAlumno nueva = new ventanaAlumno();
             nueva.Show();
@@ -55,6 +56,7 @@ namespace AyudaProyecto.Properties
             } else if (tipoUsu == "docente" && verificar.Read())
             {
                 CapaLogica.DatoUsu.CIUsu = int.Parse(txtCI.Text);
+                CapaLogica.DatoUsu.NombreUsu = tbUsuario.Text;
                 ventanaProfesor nuevaP = new ventanaProfesor();
                 nuevaP.Show();
                 this.Hide();

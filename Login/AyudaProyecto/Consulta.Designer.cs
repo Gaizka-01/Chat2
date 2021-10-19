@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtgMensajesA = new System.Windows.Forms.DataGridView();
+            this.dtgConsultaP = new System.Windows.Forms.DataGridView();
             this.dtgConsultasAnt = new System.Windows.Forms.DataGridView();
-            this.dtgMensajeP = new System.Windows.Forms.DataGridView();
+            this.dtgConsultaE = new System.Windows.Forms.DataGridView();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnEnviar = new System.Windows.Forms.Button();
@@ -65,9 +65,9 @@
             this.lblUsuarioContesta = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtM = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgMensajesA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultasAnt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgMensajeP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaE)).BeginInit();
             this.grpConsulta.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grpNuevaConsulta.SuspendLayout();
@@ -82,13 +82,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dtgMensajesA
+            // dtgConsultaP
             // 
-            this.dtgMensajesA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgMensajesA.Location = new System.Drawing.Point(6, 50);
-            this.dtgMensajesA.Name = "dtgMensajesA";
-            this.dtgMensajesA.Size = new System.Drawing.Size(214, 334);
-            this.dtgMensajesA.TabIndex = 0;
+            this.dtgConsultaP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dtgConsultaP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgConsultaP.Location = new System.Drawing.Point(20, 77);
+            this.dtgConsultaP.Name = "dtgConsultaP";
+            this.dtgConsultaP.Size = new System.Drawing.Size(204, 284);
+            this.dtgConsultaP.TabIndex = 0;
+            this.dtgConsultaP.Visible = false;
             // 
             // dtgConsultasAnt
             // 
@@ -98,13 +100,16 @@
             this.dtgConsultasAnt.Size = new System.Drawing.Size(161, 323);
             this.dtgConsultasAnt.TabIndex = 2;
             // 
-            // dtgMensajeP
+            // dtgConsultaE
             // 
-            this.dtgMensajeP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgMensajeP.Location = new System.Drawing.Point(226, 50);
-            this.dtgMensajeP.Name = "dtgMensajeP";
-            this.dtgMensajeP.Size = new System.Drawing.Size(229, 334);
-            this.dtgMensajeP.TabIndex = 3;
+            this.dtgConsultaE.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dtgConsultaE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgConsultaE.Location = new System.Drawing.Point(258, 77);
+            this.dtgConsultaE.Name = "dtgConsultaE";
+            this.dtgConsultaE.Size = new System.Drawing.Size(189, 284);
+            this.dtgConsultaE.TabIndex = 3;
+            this.dtgConsultaE.Visible = false;
+            this.dtgConsultaE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgConsultaE_CellContentClick);
             // 
             // txtMensaje
             // 
@@ -162,9 +167,9 @@
             this.grpConsulta.Controls.Add(this.txtConsulta);
             this.grpConsulta.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.grpConsulta.ForeColor = System.Drawing.Color.White;
-            this.grpConsulta.Location = new System.Drawing.Point(12, 508);
+            this.grpConsulta.Location = new System.Drawing.Point(12, 507);
             this.grpConsulta.Name = "grpConsulta";
-            this.grpConsulta.Size = new System.Drawing.Size(168, 28);
+            this.grpConsulta.Size = new System.Drawing.Size(168, 29);
             this.grpConsulta.TabIndex = 9;
             this.grpConsulta.TabStop = false;
             this.grpConsulta.Text = "Nueva Consulta";
@@ -245,13 +250,11 @@
             this.grpNuevaConsulta.Controls.Add(this.label2);
             this.grpNuevaConsulta.Controls.Add(this.btnEnviar);
             this.grpNuevaConsulta.Controls.Add(this.txtMensaje);
-            this.grpNuevaConsulta.Controls.Add(this.dtgMensajeP);
-            this.grpNuevaConsulta.Controls.Add(this.dtgMensajesA);
             this.grpNuevaConsulta.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.grpNuevaConsulta.ForeColor = System.Drawing.Color.White;
-            this.grpNuevaConsulta.Location = new System.Drawing.Point(360, 546);
+            this.grpNuevaConsulta.Location = new System.Drawing.Point(186, 507);
             this.grpNuevaConsulta.Name = "grpNuevaConsulta";
-            this.grpNuevaConsulta.Size = new System.Drawing.Size(274, 28);
+            this.grpNuevaConsulta.Size = new System.Drawing.Size(537, 67);
             this.grpNuevaConsulta.TabIndex = 25;
             this.grpNuevaConsulta.TabStop = false;
             this.grpNuevaConsulta.Text = "Nueva Consulta";
@@ -286,9 +289,9 @@
             this.grpConsultasAnt.Controls.Add(this.dtgConsultasAnt);
             this.grpConsultasAnt.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.grpConsultasAnt.ForeColor = System.Drawing.Color.White;
-            this.grpConsultasAnt.Location = new System.Drawing.Point(385, 470);
+            this.grpConsultasAnt.Location = new System.Drawing.Point(385, 457);
             this.grpConsultasAnt.Name = "grpConsultasAnt";
-            this.grpConsultasAnt.Size = new System.Drawing.Size(195, 28);
+            this.grpConsultasAnt.Size = new System.Drawing.Size(195, 41);
             this.grpConsultasAnt.TabIndex = 26;
             this.grpConsultasAnt.TabStop = false;
             this.grpConsultasAnt.Text = "Consultas anteriores";
@@ -413,6 +416,7 @@
             this.dgNuevo.ReadOnly = true;
             this.dgNuevo.Size = new System.Drawing.Size(242, 257);
             this.dgNuevo.TabIndex = 19;
+            this.dgNuevo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgNuevo_CellContentClick);
             // 
             // textBox1
             // 
@@ -440,6 +444,8 @@
             this.pNuevo.Controls.Add(this.groupBox5);
             this.pNuevo.Controls.Add(this.pictureBox1);
             this.pNuevo.Controls.Add(this.txtM);
+            this.pNuevo.Controls.Add(this.dtgConsultaE);
+            this.pNuevo.Controls.Add(this.dtgConsultaP);
             this.pNuevo.Location = new System.Drawing.Point(269, 12);
             this.pNuevo.Name = "pNuevo";
             this.pNuevo.Size = new System.Drawing.Size(522, 426);
@@ -505,7 +511,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(798, 586);
+            this.ClientSize = new System.Drawing.Size(762, 586);
             this.Controls.Add(this.pNuevo);
             this.Controls.Add(this.pOpicones);
             this.Controls.Add(this.grpConsultasAnt);
@@ -514,9 +520,9 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Consulta";
             this.Text = "v";
-            ((System.ComponentModel.ISupportInitialize)(this.dtgMensajesA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultasAnt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgMensajeP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaE)).EndInit();
             this.grpConsulta.ResumeLayout(false);
             this.grpConsulta.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -542,9 +548,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dtgMensajesA;
+        private System.Windows.Forms.DataGridView dtgConsultaP;
         private System.Windows.Forms.DataGridView dtgConsultasAnt;
-        private System.Windows.Forms.DataGridView dtgMensajeP;
+        private System.Windows.Forms.DataGridView dtgConsultaE;
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnEnviar;

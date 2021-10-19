@@ -27,31 +27,31 @@ namespace AyudaProyecto
         {
             if (cbAlumno.Checked == true)
             {
-                try
-                {
-                    string usuario = tbNombre.Text.Substring(0, 1) + tbApellido.Text;
-                    MessageBox.Show($"Cuenta creada correctamente, tu usuario es {usuario} ");
-                    MySqlConnection conectar = new MySqlConnection("server = 127.0.0.2; port = 3306; database = bdsistema; Uid = root; pwd = MalvinyBolso;");
-                    conectar.Open();
-                    MySqlCommand PersonaA = new MySqlCommand("insert into Persona(CI, Nombre, Apellido, Grupo, Contraseña, usuario) values ('"+tbCedula.Text+"','"+tbNombre.Text+"','"+tbApellido.Text+"', '"+lbGrupos.SelectedItem.ToString()+"', '"+tbContra.Text+"', ' "+usuario+"' );", conectar);
-                    MySqlCommand Alumno = new MySqlCommand("insert into Alumno(CI, Nickname) values ('"+tbCedula.Text+"', 'NULL');", conectar);
+                
+                
+                  
+                
+                    CapaLogica.ConexionBD.Conexion();
+                CapaLogica.ConexionBD.conectar.Open();
+                    MySqlCommand PersonaA = new MySqlCommand("insert into Persona(CI, Nombre, Apellido, Grupo, Contraseña, usuario) values ('"+tbCedula.Text+"','"+tbNombre.Text+"','"+tbApellido.Text+"', '"+lbGrupos.SelectedItem.ToString()+"', '"+tbContra.Text+"', ' "+txtUsuario.Text+"' );", CapaLogica.ConexionBD.conectar);
+                    MySqlCommand Alumno = new MySqlCommand("insert into Alumno(CI, Nickname, usuario) values ('"+tbCedula.Text+"', 'NULL', '"+txtUsuario.Text+"');", CapaLogica.ConexionBD.conectar);
                     PersonaA.ExecuteNonQuery();
                     Alumno.ExecuteNonQuery();
+                    CapaLogica.ConexionBD.CerrarConexion();
                     this.Close();
-                }
-                catch
-                {
-                    MessageBox.Show("Ya existe un alumno con la cedula ingresada");
-                }
+                MessageBox.Show("Usuario ingresado correctamente");
+                
+                
             } else if (cbProfesor.Checked == true)
                 {
-                    string usuario = tbNombre.Text.Substring(0, 1) + tbApellido.Text;
-                    MySqlConnection conectar = new MySqlConnection("server = 127.0.0.2; port = 3306; database = bdsistema; Uid = root; pwd = MalvinyBolso;");
-                    conectar.Open();
-                    MySqlCommand PersonaP = new MySqlCommand("insert into Persona(CI, Nombre, Apellido, Grupo, Contraseña, usuario) values ('"+tbCedula.Text+"','"+tbNombre.Text+"','"+tbApellido.Text+"', '"+ lbGrupos.SelectedItem.ToString()+"', '"+tbContra.Text+"', ' "+usuario+"' );", conectar);
-                    MySqlCommand Profesor = new MySqlCommand("insert into Docente(CI, Materia) values ('" + tbCedula.Text + "','" + lbMateria.SelectedItem.ToString() + "' );", conectar);
+       
+                  
+                    CapaLogica.ConexionBD.Conexion();
+                    MySqlCommand PersonaP = new MySqlCommand("insert into Persona(CI, Nombre, Apellido, Grupo, Contraseña, usuario) values ('"+tbCedula.Text+"','"+tbNombre.Text+"','"+tbApellido.Text+"', '"+ lbGrupos.SelectedItem.ToString()+"', '"+tbContra.Text+"', ' "+txtUsuario.Text+"' );", CapaLogica.ConexionBD.conectar );
+                    MySqlCommand Profesor = new MySqlCommand("insert into Docente(CI, Materia, usuario) values ('" + tbCedula.Text + "','" + lbMateria.SelectedItem.ToString() + "' , '"+txtUsuario.Text+"');", CapaLogica.ConexionBD.conectar);
                     PersonaP.ExecuteNonQuery();
                     Profesor.ExecuteNonQuery();
+                    CapaLogica.ConexionBD.CerrarConexion();
                     this.Close();
                 }
                 else { MessageBox.Show("Por favor seleccione tipo de usuario"); }

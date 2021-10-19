@@ -16,9 +16,18 @@ namespace AyudaProyecto
         public Consulta()
         {
             InitializeComponent();
+            CapaLogica.ConexionBD.Conexion();
+            MySqlCommand comando = new MySqlCommand("Select tema From consulta where CI = '" + CapaLogica.DatoUsu.CIUsu + "' group by tema;", CapaLogica.ConexionBD.conectar);
+            MySqlDataAdapter adaptador = new MySqlDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgNuevo.DataSource = tabla;
+            CapaLogica.ConexionBD.CerrarConexion();
         }
         string temaNuevo;
         string temaBuscar;
+        int posicion;
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -66,7 +75,7 @@ namespace AyudaProyecto
             adaptador.SelectCommand = mostrar;
             DataTable tabla = new DataTable();
             adaptador.Fill(tabla);
-            dtgMensajesA.DataSource = tabla;
+            dtgConsultaP.DataSource = tabla;
         }
 
         private void btnConsultas_Click(object sender, EventArgs e)
@@ -79,13 +88,13 @@ namespace AyudaProyecto
             adaptador.SelectCommand = mostrarMensajeA;
             DataTable tabla = new DataTable();
             adaptador.Fill(tabla);
-            dtgMensajesA.DataSource = tabla;
+            dtgConsultaP.DataSource = tabla;
             MySqlCommand mostrarMensajeP = new MySqlCommand("Select mensaje From consulta where tema = '" + temaBuscar + "' and CI = '1234567'", conectar);
             MySqlDataAdapter adaptadorP = new MySqlDataAdapter();
             adaptador.SelectCommand = mostrarMensajeP;
             DataTable tablaP = new DataTable();
             adaptador.Fill(tablaP);
-            dtgMensajeP.DataSource = tablaP;
+            dtgConsultaE.DataSource = tablaP;
             grpNuevaConsulta.Visible = true;
 
         }
@@ -110,6 +119,30 @@ namespace AyudaProyecto
             adaptador.Fill(tabla);
             dgNuevo.DataSource = tabla;
             CapaLogica.ConexionBD.CerrarConexion();
+        }
+
+        private void dgNuevo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            posicion = e.RowIndex;
+            DataGridViewRow linea = dgNuevo.Rows[posicion];
+            string consulta = linea.Cells[0].Value.ToString();
+            CapaLogica.ConexionBD.Conexion();
+            MySqlCommand mostrar = new MySqlCommand("Select mensaje From consulta where tema = '" + consulta + "' and CI = '" + CapaLogica.DatoUsu.CIUsu +"'", CapaLogica.ConexionBD.conectar);
+            CapaLogica.ConexionBD.conectar.Open();
+            mostrar.ExecuteNonQuery();
+            MySqlDataAdapter adaptador = new MySqlDataAdapter();
+            adaptador.SelectCommand = mostrar;
+            DataTable tablaP = new DataTable();
+            adaptador.Fill(tablaP);
+            dtgConsultaE.DataSource = tablaP;
+            dtgConsultaE.Visible = true;
+            CapaLogica.ConexionBD.CerrarConexion();
+
+        }
+
+        private void dtgConsultaE_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
