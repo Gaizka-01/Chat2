@@ -18,15 +18,18 @@ namespace AyudaProyecto
         public ventanaAlumno()
         {
             InitializeComponent();
+            lblNombreConfig.Text = ""+ CapaLogica.DatoUsu.Nombre + ""+ CapaLogica.DatoUsu.Apellido;
+            lblGrupo.Text = CapaLogica.DatoUsu.Grupo;
+           
         }
 
-      
+
         private void btnMostar_Click(object sender, EventArgs e)
         {
             CapaLogica.ConexionBD.Conexion();
             CapaLogica.ConexionBD.conectar.Open();
             MySqlCommand comando = new MySqlCommand("Select persona.Nombre, docente.Materia from persona, docente where persona.CI = docente.CI", CapaLogica.ConexionBD.conectar);
-        
+            CapaLogica.ConexionBD.CerrarConexion();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -15,6 +15,9 @@ namespace CapaLogica
     {
         public static int CIUsu { get; set; }
         public static string NombreUsu { get; set; }
+        public static string Nombre { get; set; }
+        public static string Apellido { get; set; }
+        public static string Grupo { get; set; }
 
     }
 }

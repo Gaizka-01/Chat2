@@ -51,7 +51,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgNuevo = new System.Windows.Forms.DataGridView();
             this.lblNombreConfig = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblGrupo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pOpicones = new System.Windows.Forms.Panel();
@@ -336,16 +336,16 @@
             this.lblNombreConfig.Text = "Nombre Apellido";
             this.lblNombreConfig.Click += new System.EventHandler(this.lblNombreConfig_Click);
             // 
-            // label5
+            // lblGrupo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(209, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 18);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "3ba";
+            this.lblGrupo.AutoSize = true;
+            this.lblGrupo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrupo.ForeColor = System.Drawing.Color.LightGray;
+            this.lblGrupo.Location = new System.Drawing.Point(209, 17);
+            this.lblGrupo.Name = "lblGrupo";
+            this.lblGrupo.Size = new System.Drawing.Size(36, 18);
+            this.lblGrupo.TabIndex = 12;
+            this.lblGrupo.Text = "3ba";
             // 
             // panel1
             // 
@@ -371,7 +371,7 @@
             this.pOpicones.Controls.Add(this.btnChats);
             this.pOpicones.Controls.Add(this.panel2);
             this.pOpicones.Controls.Add(this.panel1);
-            this.pOpicones.Controls.Add(this.label5);
+            this.pOpicones.Controls.Add(this.lblGrupo);
             this.pOpicones.Controls.Add(this.lblNombreConfig);
             this.pOpicones.Controls.Add(this.pictureBox2);
             this.pOpicones.Controls.Add(this.dgNuevo);
@@ -497,7 +497,7 @@
         private System.Windows.Forms.DataGridView dgNuevo;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblNombreConfig;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblGrupo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pOpicones;

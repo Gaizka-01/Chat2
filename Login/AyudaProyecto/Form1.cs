@@ -41,18 +41,31 @@ namespace AyudaProyecto.Properties
         private void btnAcceder_Click(object sender, EventArgs e)
         {
             CapaLogica.ConexionBD.Conexion();
+            
+            MySqlCommand comando = new MySqlCommand("Select usuario, Contraseña from Persona where usuario = ' "+tbUsuario.Text+" ' and Contraseña = '"+tbContraseña.Text+"'", CapaLogica.ConexionBD.conectar);
             CapaLogica.ConexionBD.conectar.Open();
-            MySqlCommand comando = new MySqlCommand("Select usuario, Contraseña from Persona where usuario = ' "+ tbUsuario.Text +" ' and Contraseña = '"+ tbContraseña.Text +"'", CapaLogica.ConexionBD.conectar);
             MySqlDataReader verificar = comando.ExecuteReader();
+          
 
             if (tipoUsu == "alumno" && verificar.Read()) {
+                CapaLogica.ConexionBD.conectar.Close();
+                CapaLogica.ConexionBD.Conexion();
+                CapaLogica.ConexionBD.conectar.Open();
                 CapaLogica.DatoUsu.CIUsu = int.Parse(txtCI.Text);
                 CapaLogica.DatoUsu.NombreUsu = tbUsuario.Text;
-               
+                MySqlCommand Nombre = new MySqlCommand("Select Nombre From persona where CI = '" + CapaLogica.DatoUsu.CIUsu + "'", CapaLogica.ConexionBD.conectar);
+                MySqlCommand Apellido = new MySqlCommand("Select Apellido From persona where CI = '" + CapaLogica.DatoUsu.CIUsu + "'", CapaLogica.ConexionBD.conectar);
+                MySqlCommand Grupo = new MySqlCommand("Select Grupo From persona where CI = '" + CapaLogica.DatoUsu.CIUsu + "'", CapaLogica.ConexionBD.conectar);
+                Nombre.ExecuteNonQuery();
+                Apellido.ExecuteNonQuery();
+                Grupo.ExecuteNonQuery();
+                CapaLogica.DatoUsu.Nombre = Nombre.ExecuteScalar().ToString();
+                CapaLogica.DatoUsu.Apellido = Apellido.ExecuteScalar().ToString();
+                CapaLogica.DatoUsu.Grupo = Grupo.ExecuteScalar().ToString();
                 ventanaAlumno nueva = new ventanaAlumno();
             nueva.Show();
             this.Hide();
-                CapaLogica.ConexionBD.conectar.Close();
+                CapaLogica.ConexionBD.CerrarConexion();
             } else if (tipoUsu == "docente" && verificar.Read())
             {
                 CapaLogica.DatoUsu.CIUsu = int.Parse(txtCI.Text);

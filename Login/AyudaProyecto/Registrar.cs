@@ -47,10 +47,11 @@ namespace AyudaProyecto
        
                   
                     CapaLogica.ConexionBD.Conexion();
-                    MySqlCommand PersonaP = new MySqlCommand("insert into Persona(CI, Nombre, Apellido, Grupo, Contraseña, usuario) values ('"+tbCedula.Text+"','"+tbNombre.Text+"','"+tbApellido.Text+"', '"+ lbGrupos.SelectedItem.ToString()+"', '"+tbContra.Text+"', ' "+txtUsuario.Text+"' );", CapaLogica.ConexionBD.conectar );
-                    MySqlCommand Profesor = new MySqlCommand("insert into Docente(CI, Materia, usuario) values ('" + tbCedula.Text + "','" + lbMateria.SelectedItem.ToString() + "' , '"+txtUsuario.Text+"');", CapaLogica.ConexionBD.conectar);
+                CapaLogica.ConexionBD.conectar.Open();
+                    MySqlCommand PersonaP = new MySqlCommand("insert into Persona(CI, Nombre, Apellido, Grupo, Contraseña, usuario) values ('"+tbCedula.Text+"','"+tbNombre.Text+"','"+tbApellido.Text+"', '"+lbGrupos.SelectedItem.ToString()+"', '"+tbContra.Text+"', ' "+txtUsuario.Text+"' );", CapaLogica.ConexionBD.conectar );
+                    MySqlCommand Profesor = new MySqlCommand("insert into Docente(CI, Materia, usuario) values ('"+tbCedula.Text+"','"+lbMateria.SelectedItem.ToString()+"' , '"+txtUsuario.Text+"');", CapaLogica.ConexionBD.conectar);
                     PersonaP.ExecuteNonQuery();
-                    Profesor.ExecuteNonQuery();
+                     Profesor.ExecuteNonQuery();
                     CapaLogica.ConexionBD.CerrarConexion();
                     this.Close();
                 }
