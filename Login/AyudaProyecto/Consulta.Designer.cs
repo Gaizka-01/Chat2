@@ -185,7 +185,7 @@
             // 
             this.dgNuevo.AllowUserToAddRows = false;
             this.dgNuevo.AllowUserToDeleteRows = false;
-            this.dgNuevo.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.dgNuevo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.dgNuevo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgNuevo.Location = new System.Drawing.Point(3, 104);
             this.dgNuevo.Name = "dgNuevo";

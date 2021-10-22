@@ -35,18 +35,13 @@
             this.btnMostar = new System.Windows.Forms.Button();
             this.grpCrear = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnCrearChat = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnNuevaConsulta = new System.Windows.Forms.PictureBox();
-            this.btnEnviarMensaje = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblUsuarioContesta = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgNuevo = new System.Windows.Forms.DataGridView();
@@ -57,24 +52,35 @@
             this.pOpicones = new System.Windows.Forms.Panel();
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnChats = new System.Windows.Forms.Button();
+            this.txtDocente = new System.Windows.Forms.TextBox();
+            this.dtgConsulta = new System.Windows.Forms.DataGridView();
+            this.grpTema = new System.Windows.Forms.GroupBox();
+            this.txtTema = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnCrearChat = new System.Windows.Forms.PictureBox();
+            this.btnNuevaConsulta = new System.Windows.Forms.PictureBox();
+            this.btnEnviarMensaje = new System.Windows.Forms.PictureBox();
+            this.btnEnviarFoto = new System.Windows.Forms.PictureBox();
             this.pNuevo.SuspendLayout();
             this.fondoCrear.SuspendLayout();
             this.grpCrear.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCrearChat)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNuevaConsulta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarMensaje)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgNuevo)).BeginInit();
             this.pOpicones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsulta)).BeginInit();
+            this.grpTema.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCrearChat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNuevaConsulta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarMensaje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // pNuevo
@@ -82,9 +88,10 @@
             this.pNuevo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pNuevo.Controls.Add(this.fondoCrear);
             this.pNuevo.Controls.Add(this.grpCrear);
+            this.pNuevo.Controls.Add(this.dtgConsulta);
             this.pNuevo.Controls.Add(this.btnEnviarMensaje);
             this.pNuevo.Controls.Add(this.groupBox1);
-            this.pNuevo.Controls.Add(this.pictureBox1);
+            this.pNuevo.Controls.Add(this.btnEnviarFoto);
             this.pNuevo.Controls.Add(this.txtMensaje);
             this.pNuevo.Location = new System.Drawing.Point(268, 24);
             this.pNuevo.Name = "pNuevo";
@@ -97,7 +104,7 @@
             this.fondoCrear.Controls.Add(this.label1);
             this.fondoCrear.Controls.Add(this.btnCancelarCrear);
             this.fondoCrear.Controls.Add(this.btnMostar);
-            this.fondoCrear.Location = new System.Drawing.Point(7, 74);
+            this.fondoCrear.Location = new System.Drawing.Point(8, 76);
             this.fondoCrear.Name = "fondoCrear";
             this.fondoCrear.Size = new System.Drawing.Size(506, 65);
             this.fondoCrear.TabIndex = 24;
@@ -140,6 +147,7 @@
             this.btnMostar.TabIndex = 20;
             this.btnMostar.Text = "Mostrar Profesores";
             this.btnMostar.UseVisualStyleBackColor = true;
+            this.btnMostar.Visible = false;
             this.btnMostar.Click += new System.EventHandler(this.btnMostar_Click);
             // 
             // grpCrear
@@ -147,7 +155,7 @@
             this.grpCrear.Controls.Add(this.groupBox4);
             this.grpCrear.Controls.Add(this.groupBox3);
             this.grpCrear.Controls.Add(this.groupBox2);
-            this.grpCrear.Location = new System.Drawing.Point(7, 68);
+            this.grpCrear.Location = new System.Drawing.Point(8, 70);
             this.grpCrear.Name = "grpCrear";
             this.grpCrear.Size = new System.Drawing.Size(506, 307);
             this.grpCrear.TabIndex = 23;
@@ -164,15 +172,6 @@
             this.groupBox4.Size = new System.Drawing.Size(145, 183);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.pictureBox4.Location = new System.Drawing.Point(18, 63);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(103, 99);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
             // 
             // label3
             // 
@@ -195,16 +194,6 @@
             this.groupBox3.Size = new System.Drawing.Size(145, 183);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
-            // 
-            // btnCrearChat
-            // 
-            this.btnCrearChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.btnCrearChat.Location = new System.Drawing.Point(21, 63);
-            this.btnCrearChat.Name = "btnCrearChat";
-            this.btnCrearChat.Size = new System.Drawing.Size(103, 99);
-            this.btnCrearChat.TabIndex = 6;
-            this.btnCrearChat.TabStop = false;
-            this.btnCrearChat.Click += new System.EventHandler(this.btnCrearChat_Click);
             // 
             // label4
             // 
@@ -240,29 +229,10 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Crear Consulta";
             // 
-            // btnNuevaConsulta
-            // 
-            this.btnNuevaConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.btnNuevaConsulta.Location = new System.Drawing.Point(19, 63);
-            this.btnNuevaConsulta.Name = "btnNuevaConsulta";
-            this.btnNuevaConsulta.Size = new System.Drawing.Size(103, 99);
-            this.btnNuevaConsulta.TabIndex = 1;
-            this.btnNuevaConsulta.TabStop = false;
-            // 
-            // btnEnviarMensaje
-            // 
-            this.btnEnviarMensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
-            this.btnEnviarMensaje.Image = global::AyudaProyecto.Properties.Resources.enviar;
-            this.btnEnviarMensaje.Location = new System.Drawing.Point(485, 384);
-            this.btnEnviarMensaje.Name = "btnEnviarMensaje";
-            this.btnEnviarMensaje.Size = new System.Drawing.Size(24, 23);
-            this.btnEnviarMensaje.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEnviarMensaje.TabIndex = 22;
-            this.btnEnviarMensaje.TabStop = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.groupBox1.Controls.Add(this.txtDocente);
             this.groupBox1.Controls.Add(this.lblUsuarioContesta);
             this.groupBox1.Location = new System.Drawing.Point(0, -6);
             this.groupBox1.Name = "groupBox1";
@@ -282,17 +252,6 @@
             this.lblUsuarioContesta.TabIndex = 11;
             this.lblUsuarioContesta.Text = "Para:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.pictureBox1.Image = global::AyudaProyecto.Properties.Resources.Link;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 384);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(21, 23);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
             // txtMensaje
             // 
             this.txtMensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
@@ -303,6 +262,7 @@
             this.txtMensaje.Size = new System.Drawing.Size(417, 23);
             this.txtMensaje.TabIndex = 21;
             this.txtMensaje.Text = "Message";
+            this.txtMensaje.Visible = false;
             // 
             // textBox1
             // 
@@ -316,7 +276,7 @@
             // 
             this.dgNuevo.AllowUserToAddRows = false;
             this.dgNuevo.AllowUserToDeleteRows = false;
-            this.dgNuevo.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.dgNuevo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.dgNuevo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgNuevo.Location = new System.Drawing.Point(3, 104);
             this.dgNuevo.Name = "dgNuevo";
@@ -415,9 +375,55 @@
             this.btnChats.Text = "Chats";
             this.btnChats.UseVisualStyleBackColor = false;
             // 
+            // txtDocente
+            // 
+            this.txtDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtDocente.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(162)))), ((int)(((byte)(162)))));
+            this.txtDocente.Location = new System.Drawing.Point(50, 24);
+            this.txtDocente.Name = "txtDocente";
+            this.txtDocente.Size = new System.Drawing.Size(210, 22);
+            this.txtDocente.TabIndex = 27;
+            this.txtDocente.Text = "Insertar usuario del docente";
+            this.txtDocente.Visible = false;
+            // 
+            // dtgConsulta
+            // 
+            this.dtgConsulta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dtgConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgConsulta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dtgConsulta.Location = new System.Drawing.Point(54, 156);
+            this.dtgConsulta.Name = "dtgConsulta";
+            this.dtgConsulta.Size = new System.Drawing.Size(419, 206);
+            this.dtgConsulta.TabIndex = 26;
+            this.dtgConsulta.Visible = false;
+            // 
+            // grpTema
+            // 
+            this.grpTema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.grpTema.Controls.Add(this.txtTema);
+            this.grpTema.Location = new System.Drawing.Point(325, 107);
+            this.grpTema.Name = "grpTema";
+            this.grpTema.Size = new System.Drawing.Size(417, 65);
+            this.grpTema.TabIndex = 28;
+            this.grpTema.TabStop = false;
+            this.grpTema.Visible = false;
+            // 
+            // txtTema
+            // 
+            this.txtTema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.txtTema.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(162)))), ((int)(((byte)(162)))));
+            this.txtTema.Location = new System.Drawing.Point(69, 23);
+            this.txtTema.Name = "txtTema";
+            this.txtTema.Size = new System.Drawing.Size(289, 22);
+            this.txtTema.TabIndex = 27;
+            this.txtTema.Text = "Escribir tema de la consulta";
+            this.txtTema.Visible = false;
+            // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::AyudaProyecto.Properties.Resources.usuario1;
+            this.pictureBox2.Image = global::AyudaProyecto.Properties.Resources.Avatar_Perfil;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(55, 51);
@@ -437,14 +443,69 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.pictureBox4.Location = new System.Drawing.Point(18, 63);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(103, 99);
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // btnCrearChat
+            // 
+            this.btnCrearChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.btnCrearChat.Location = new System.Drawing.Point(21, 63);
+            this.btnCrearChat.Name = "btnCrearChat";
+            this.btnCrearChat.Size = new System.Drawing.Size(103, 99);
+            this.btnCrearChat.TabIndex = 6;
+            this.btnCrearChat.TabStop = false;
+            this.btnCrearChat.Click += new System.EventHandler(this.btnCrearChat_Click);
+            // 
+            // btnNuevaConsulta
+            // 
+            this.btnNuevaConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.btnNuevaConsulta.Location = new System.Drawing.Point(19, 63);
+            this.btnNuevaConsulta.Name = "btnNuevaConsulta";
+            this.btnNuevaConsulta.Size = new System.Drawing.Size(103, 99);
+            this.btnNuevaConsulta.TabIndex = 1;
+            this.btnNuevaConsulta.TabStop = false;
+            this.btnNuevaConsulta.Click += new System.EventHandler(this.btnNuevaConsulta_Click);
+            // 
+            // btnEnviarMensaje
+            // 
+            this.btnEnviarMensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.btnEnviarMensaje.Image = global::AyudaProyecto.Properties.Resources.Boton_Enviar_Mjs;
+            this.btnEnviarMensaje.Location = new System.Drawing.Point(485, 384);
+            this.btnEnviarMensaje.Name = "btnEnviarMensaje";
+            this.btnEnviarMensaje.Size = new System.Drawing.Size(28, 23);
+            this.btnEnviarMensaje.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEnviarMensaje.TabIndex = 22;
+            this.btnEnviarMensaje.TabStop = false;
+            this.btnEnviarMensaje.Visible = false;
+            this.btnEnviarMensaje.Click += new System.EventHandler(this.btnEnviarMensaje_Click);
+            // 
+            // btnEnviarFoto
+            // 
+            this.btnEnviarFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.btnEnviarFoto.Image = global::AyudaProyecto.Properties.Resources.Boton_adjuntar;
+            this.btnEnviarFoto.Location = new System.Drawing.Point(17, 384);
+            this.btnEnviarFoto.Name = "btnEnviarFoto";
+            this.btnEnviarFoto.Size = new System.Drawing.Size(28, 23);
+            this.btnEnviarFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEnviarFoto.TabIndex = 21;
+            this.btnEnviarFoto.TabStop = false;
+            this.btnEnviarFoto.Visible = false;
+            // 
             // ventanaAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(796, 456);
-            this.Controls.Add(this.pNuevo);
+            this.ClientSize = new System.Drawing.Size(796, 637);
+            this.Controls.Add(this.grpTema);
             this.Controls.Add(this.pOpicones);
+            this.Controls.Add(this.pNuevo);
             this.Name = "ventanaAlumno";
             this.Text = "ventanaAlumno";
             this.pNuevo.ResumeLayout(false);
@@ -454,22 +515,25 @@
             this.grpCrear.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCrearChat)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNuevaConsulta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarMensaje)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgNuevo)).EndInit();
             this.pOpicones.ResumeLayout(false);
             this.pOpicones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsulta)).EndInit();
+            this.grpTema.ResumeLayout(false);
+            this.grpTema.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCrearChat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNuevaConsulta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarMensaje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarFoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -503,8 +567,12 @@
         private System.Windows.Forms.Panel pOpicones;
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.PictureBox btnEnviarMensaje;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnEnviarFoto;
         private System.Windows.Forms.Button btnChats;
         private System.Windows.Forms.Button btnConsultas;
+        private System.Windows.Forms.TextBox txtDocente;
+        private System.Windows.Forms.DataGridView dtgConsulta;
+        private System.Windows.Forms.GroupBox grpTema;
+        private System.Windows.Forms.TextBox txtTema;
     }
 }

@@ -19,5 +19,6 @@ namespace CapaLogica
         public static string Apellido { get; set; }
         public static string Grupo { get; set; }
 
+        
     }
 }

@@ -32,9 +32,9 @@ namespace AyudaProyecto
                   
                 
                     CapaLogica.ConexionBD.Conexion();
-                CapaLogica.ConexionBD.conectar.Open();
-                    MySqlCommand PersonaA = new MySqlCommand("insert into Persona(CI, Nombre, Apellido, Grupo, Contraseña, usuario) values ('"+tbCedula.Text+"','"+tbNombre.Text+"','"+tbApellido.Text+"', '"+lbGrupos.SelectedItem.ToString()+"', '"+tbContra.Text+"', ' "+txtUsuario.Text+"' );", CapaLogica.ConexionBD.conectar);
+                    MySqlCommand PersonaA = new MySqlCommand("insert into Persona(CI, Nombre, Apellido, Grupo, Contraseña, usuario) values ('"+tbCedula.Text+"','"+tbNombre.Text+"','"+tbApellido.Text+"', '"+lbGrupos.SelectedItem.ToString()+"', '"+tbContra.Text+"', '"+txtUsuario.Text+"' );", CapaLogica.ConexionBD.conectar);
                     MySqlCommand Alumno = new MySqlCommand("insert into Alumno(CI, Nickname, usuario) values ('"+tbCedula.Text+"', 'NULL', '"+txtUsuario.Text+"');", CapaLogica.ConexionBD.conectar);
+                     CapaLogica.ConexionBD.conectar.Open();
                     PersonaA.ExecuteNonQuery();
                     Alumno.ExecuteNonQuery();
                     CapaLogica.ConexionBD.CerrarConexion();
@@ -54,8 +54,10 @@ namespace AyudaProyecto
                      Profesor.ExecuteNonQuery();
                     CapaLogica.ConexionBD.CerrarConexion();
                     this.Close();
-                }
-                else { MessageBox.Show("Por favor seleccione tipo de usuario"); }
+                MessageBox.Show("Usuario ingresado correctamente");
+
+            }
+            else { MessageBox.Show("Por favor seleccione tipo de usuario"); }
             
         }
 

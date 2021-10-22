@@ -170,5 +170,14 @@
   <ItemGroup>
     <None Include="Resources\enviar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boton Enviar Mjs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boton adjuntar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar Perfil.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
