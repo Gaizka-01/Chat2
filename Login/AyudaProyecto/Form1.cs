@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using CapaLogica;
+using CapaDatos;
 
 namespace AyudaProyecto.Properties
 {
@@ -26,7 +25,10 @@ namespace AyudaProyecto.Properties
             Application.Run(new Form1());
         }
 
-        string tipoUsu;
+        string condicion;
+        string usuario;
+        int CI;
+        string Contrasenia;
         
 
         
@@ -40,54 +42,43 @@ namespace AyudaProyecto.Properties
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            CapaLogica.ConexionBD.Conexion();
-            MySqlCommand comando = new MySqlCommand("Select usuario, Contraseña from Persona where usuario = '"+tbUsuario.Text+" ' and Contraseña = '"+tbContraseña.Text+"'", CapaLogica.ConexionBD.conectar);
-            CapaLogica.ConexionBD.conectar.Open();
-            MySqlDataReader verificar = comando.ExecuteReader();
-          
+            try
+            {
+                usuario = tbUsuario.Text;
+            CI = Convert.ToInt32(txtCI.Text);
+            Contrasenia = tbContraseña.Text;
+            
 
-            if (tipoUsu == "alumno" && verificar.Read()) {
-                CapaLogica.ConexionBD.conectar.Close();
-                CapaLogica.ConexionBD.CerrarConexion();
-                CapaLogica.ConexionBD.conectar.Open();
+            
+            CapaDatos.Usuario.BuscarUsuario(usuario, CI, Contrasenia, condicion);
+
+            if (CapaDatos.Usuario.Error == false && condicion == "Alumno")
+            {
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
                 
-                CapaLogica.DatoUsu.CIUsu = int.Parse(txtCI.Text);
-                CapaLogica.DatoUsu.NombreUsu = tbUsuario.Text;
-                MySqlCommand Nombre = new MySqlCommand("Select Nombre From persona where CI = '" + CapaLogica.DatoUsu.CIUsu + "'", CapaLogica.ConexionBD.conectar);
-                MySqlCommand Apellido = new MySqlCommand("Select Apellido From persona where CI = '" + CapaLogica.DatoUsu.CIUsu + "'", CapaLogica.ConexionBD.conectar);
-                MySqlCommand Grupo = new MySqlCommand("Select Grupo From persona where CI = '" + CapaLogica.DatoUsu.CIUsu + "'", CapaLogica.ConexionBD.conectar);
-                Nombre.ExecuteNonQuery();
-                Apellido.ExecuteNonQuery();
-                Grupo.ExecuteNonQuery();
-                CapaLogica.DatoUsu.Nombre = Nombre.ExecuteScalar().ToString();
-                CapaLogica.DatoUsu.Apellido = Apellido.ExecuteScalar().ToString();
-                CapaLogica.DatoUsu.Grupo = Grupo.ExecuteScalar().ToString();
-                ventanaAlumno nueva = new ventanaAlumno();
-            nueva.Show();
-            this.Hide();
-                CapaLogica.ConexionBD.CerrarConexion();
-            } else if (tipoUsu == "docente" && verificar.Read())
-            {
-                CapaLogica.ConexionBD.conectar.Close();
-                CapaLogica.ConexionBD.CerrarConexion();
-                CapaLogica.ConexionBD.conectar.Open();
-                CapaLogica.DatoUsu.CIUsu = int.Parse(txtCI.Text);
-                CapaLogica.DatoUsu.NombreUsu = tbUsuario.Text;
-                MySqlCommand Nombre = new MySqlCommand("Select Nombre From persona where CI = '" + CapaLogica.DatoUsu.CIUsu + "'", CapaLogica.ConexionBD.conectar);
-                MySqlCommand Apellido = new MySqlCommand("Select Apellido From persona where CI = '" + CapaLogica.DatoUsu.CIUsu + "'", CapaLogica.ConexionBD.conectar);
-                Nombre.ExecuteNonQuery();
-                Apellido.ExecuteNonQuery();
-                CapaLogica.DatoUsu.Nombre = Nombre.ExecuteScalar().ToString();
-                CapaLogica.DatoUsu.Apellido = Apellido.ExecuteScalar().ToString();
-                ventanaProfesor nuevaP = new ventanaProfesor();
-                nuevaP.Show();
+                CapaDatos.Usuario.DevolverAlumno(CI);
+                ventanaAlumno nuevaA = new ventanaAlumno();
+                nuevaA.Show();
                 this.Hide();
-                CapaLogica.ConexionBD.CerrarConexion();
 
-            }
-            else
+
+            } else if (CapaDatos.Usuario.Error == false && condicion == "Docente")
             {
-                MessageBox.Show("No se encontro ningun usuario");
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+                
+                CapaDatos.Usuario.DevolverProfesor(CI);
+                ventanaProfesor nuevaA = new ventanaProfesor();
+                nuevaA.Show();
+                this.Hide();
+
+
+            } else
+            {
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+            }
+             } catch (Exception eS)
+            {
+                MessageBox.Show("A ocurrido un error, Vuelve a intentarlo" + eS);
             }
         }
 
@@ -100,14 +91,15 @@ namespace AyudaProyecto.Properties
         {
             tbUsuario.Visible = true;
             tbContraseña.Visible = true;
-            btnAcceder.Visible = true;
+            btnAcceder.Visible = false;
+            btnAccederAdmin.Visible = true;
             btnRegistrar.Visible = true;
             btnVolver.Visible = true;
             groupUsuario.Visible = false;
             Logo.Visible = true;
             lblMenssages.Visible = true;
-            txtCI.Visible = true;
-            tipoUsu = "admin";
+            txtCI.Visible = false;
+            condicion = "admin";
         }
 
         private void picDocente_Click(object sender, EventArgs e)
@@ -121,7 +113,7 @@ namespace AyudaProyecto.Properties
             Logo.Visible = true;
             lblMenssages.Visible = true;
             txtCI.Visible = true;
-            tipoUsu = "docente";
+            condicion = "Docente";
         }
 
         private void picAlumno_Click(object sender, EventArgs e)
@@ -135,7 +127,7 @@ namespace AyudaProyecto.Properties
             Logo.Visible = true;
             lblMenssages.Visible = true;
             txtCI.Visible = true;
-            tipoUsu = "alumno";
+            condicion = "Alumno";
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -149,9 +141,54 @@ namespace AyudaProyecto.Properties
             Logo.Visible = false;
             lblMenssages.Visible = false;
             txtCI.Visible = false;
+            btnAccederAdmin.Visible = false;
+            tbUsuario.Text = "Usuario";
+            txtCI.Text = "Cedula";
+            tbContraseña.Text = "Contraseña";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
 
-       
+        private void tbUsuario_Enter(object sender, EventArgs e)
+        {
+            if (tbUsuario.Text == "Usuario") tbUsuario.Text = "";
+        }
+
+        private void txtCI_Enter(object sender, EventArgs e)
+        {
+            if (txtCI.Text == "Cedula") txtCI.Text = "";
+        }
+
+        private void tbContraseña_Enter(object sender, EventArgs e)
+        {
+            if (tbContraseña.Text == "Contraseña") tbContraseña.Text = "";
+
+        }
+
+        private void btnAccederAdmin_Click(object sender, EventArgs e)
+        {
+            usuario = tbUsuario.Text;
+            Contrasenia = tbContraseña.Text;
+            if (usuario == "admin" && Contrasenia == "123")
+            {
+                ventanaAdministrador nueva = new ventanaAdministrador();
+                nueva.Show();
+                this.Hide();
+            }
+        }
+
+        private void tbContraseña_TextChanged(object sender, EventArgs e)
+        {
+            if (tbContraseña.Text=="Contraseña")
+            {
+
+            } else
+            {
+                tbContraseña.PasswordChar = '*';
+            }
+        }
     }
 }

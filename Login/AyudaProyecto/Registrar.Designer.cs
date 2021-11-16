@@ -30,8 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbAlumno = new System.Windows.Forms.CheckBox();
-            this.cbProfesor = new System.Windows.Forms.CheckBox();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbApellido = new System.Windows.Forms.TextBox();
             this.tbCedula = new System.Windows.Forms.TextBox();
@@ -44,6 +42,8 @@
             this.lbGrupos = new System.Windows.Forms.ListBox();
             this.lbMateria = new System.Windows.Forms.ListBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.cbAlumno = new System.Windows.Forms.RadioButton();
+            this.cbProfesor = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -68,33 +68,6 @@
             this.label2.TabIndex = 103;
             this.label2.Text = "Seleccione Tipo de Usuario:";
             // 
-            // cbAlumno
-            // 
-            this.cbAlumno.AutoSize = true;
-            this.cbAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbAlumno.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAlumno.ForeColor = System.Drawing.Color.DimGray;
-            this.cbAlumno.Location = new System.Drawing.Point(467, 85);
-            this.cbAlumno.Name = "cbAlumno";
-            this.cbAlumno.Size = new System.Drawing.Size(74, 21);
-            this.cbAlumno.TabIndex = 104;
-            this.cbAlumno.Text = "Alumno";
-            this.cbAlumno.UseVisualStyleBackColor = true;
-            // 
-            // cbProfesor
-            // 
-            this.cbProfesor.AutoSize = true;
-            this.cbProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbProfesor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbProfesor.ForeColor = System.Drawing.Color.DimGray;
-            this.cbProfesor.Location = new System.Drawing.Point(547, 85);
-            this.cbProfesor.Name = "cbProfesor";
-            this.cbProfesor.Size = new System.Drawing.Size(75, 21);
-            this.cbProfesor.TabIndex = 105;
-            this.cbProfesor.Text = "Profesor";
-            this.cbProfesor.UseVisualStyleBackColor = true;
-            this.cbProfesor.CheckedChanged += new System.EventHandler(this.cbProfesor_CheckedChanged);
-            // 
             // tbNombre
             // 
             this.tbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
@@ -106,6 +79,7 @@
             this.tbNombre.Size = new System.Drawing.Size(422, 20);
             this.tbNombre.TabIndex = 106;
             this.tbNombre.Text = "Nombre";
+            this.tbNombre.Enter += new System.EventHandler(this.tbNombre_Enter);
             // 
             // tbApellido
             // 
@@ -118,6 +92,7 @@
             this.tbApellido.Size = new System.Drawing.Size(422, 20);
             this.tbApellido.TabIndex = 107;
             this.tbApellido.Text = "Apellido";
+            this.tbApellido.Enter += new System.EventHandler(this.tbApellido_Enter);
             // 
             // tbCedula
             // 
@@ -128,8 +103,9 @@
             this.tbCedula.Location = new System.Drawing.Point(282, 190);
             this.tbCedula.Name = "tbCedula";
             this.tbCedula.Size = new System.Drawing.Size(422, 20);
-            this.tbCedula.TabIndex = 108;
+            this.tbCedula.TabIndex = 109;
             this.tbCedula.Text = "Cedula";
+            this.tbCedula.Enter += new System.EventHandler(this.tbCedula_Enter);
             // 
             // tbContra
             // 
@@ -140,9 +116,10 @@
             this.tbContra.Location = new System.Drawing.Point(282, 213);
             this.tbContra.Name = "tbContra";
             this.tbContra.Size = new System.Drawing.Size(422, 20);
-            this.tbContra.TabIndex = 109;
+            this.tbContra.TabIndex = 110;
             this.tbContra.Text = "Contraseña";
             this.tbContra.TextChanged += new System.EventHandler(this.tbContra_TextChanged);
+            this.tbContra.Enter += new System.EventHandler(this.tbContra_Enter);
             // 
             // tbContra2
             // 
@@ -153,8 +130,10 @@
             this.tbContra2.Location = new System.Drawing.Point(282, 241);
             this.tbContra2.Name = "tbContra2";
             this.tbContra2.Size = new System.Drawing.Size(422, 20);
-            this.tbContra2.TabIndex = 110;
+            this.tbContra2.TabIndex = 111;
             this.tbContra2.Text = "Repetir Contraseña";
+            this.tbContra2.TextChanged += new System.EventHandler(this.tbContra2_TextChanged);
+            this.tbContra2.Enter += new System.EventHandler(this.tbContra2_Enter);
             // 
             // btnVolver
             // 
@@ -165,9 +144,10 @@
             this.btnVolver.Location = new System.Drawing.Point(602, 316);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(66, 34);
-            this.btnVolver.TabIndex = 123;
+            this.btnVolver.TabIndex = 115;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnRegistrar
             // 
@@ -180,7 +160,7 @@
             this.btnRegistrar.Location = new System.Drawing.Point(674, 316);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(90, 34);
-            this.btnRegistrar.TabIndex = 124;
+            this.btnRegistrar.TabIndex = 114;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -226,7 +206,7 @@
             this.lbGrupos.Location = new System.Drawing.Point(282, 319);
             this.lbGrupos.Name = "lbGrupos";
             this.lbGrupos.Size = new System.Drawing.Size(63, 85);
-            this.lbGrupos.TabIndex = 127;
+            this.lbGrupos.TabIndex = 112;
             // 
             // lbMateria
             // 
@@ -243,8 +223,9 @@
             this.lbMateria.Location = new System.Drawing.Point(367, 319);
             this.lbMateria.Name = "lbMateria";
             this.lbMateria.Size = new System.Drawing.Size(94, 85);
-            this.lbMateria.TabIndex = 128;
+            this.lbMateria.TabIndex = 113;
             this.lbMateria.Visible = false;
+            this.lbMateria.SelectedIndexChanged += new System.EventHandler(this.lbMateria_SelectedIndexChanged);
             // 
             // txtUsuario
             // 
@@ -255,8 +236,37 @@
             this.txtUsuario.Location = new System.Drawing.Point(282, 164);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(422, 20);
-            this.txtUsuario.TabIndex = 129;
+            this.txtUsuario.TabIndex = 108;
             this.txtUsuario.Text = "Nombre de usuario";
+            this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
+            // 
+            // cbAlumno
+            // 
+            this.cbAlumno.AutoSize = true;
+            this.cbAlumno.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.cbAlumno.ForeColor = System.Drawing.Color.DimGray;
+            this.cbAlumno.Location = new System.Drawing.Point(461, 83);
+            this.cbAlumno.Name = "cbAlumno";
+            this.cbAlumno.Size = new System.Drawing.Size(76, 21);
+            this.cbAlumno.TabIndex = 127;
+            this.cbAlumno.TabStop = true;
+            this.cbAlumno.Text = "Alumno";
+            this.cbAlumno.UseVisualStyleBackColor = true;
+            // 
+            // cbProfesor
+            // 
+            this.cbProfesor.AutoSize = true;
+            this.cbProfesor.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.cbProfesor.ForeColor = System.Drawing.Color.DimGray;
+            this.cbProfesor.Location = new System.Drawing.Point(544, 83);
+            this.cbProfesor.Name = "cbProfesor";
+            this.cbProfesor.Size = new System.Drawing.Size(77, 21);
+            this.cbProfesor.TabIndex = 128;
+            this.cbProfesor.TabStop = true;
+            this.cbProfesor.Text = "Profesor";
+            this.cbProfesor.UseVisualStyleBackColor = true;
+            this.cbProfesor.CheckedChanged += new System.EventHandler(this.cbProfesor_CheckedChanged);
+            this.cbProfesor.Leave += new System.EventHandler(this.cbProfesor_Leave);
             // 
             // Registrar
             // 
@@ -264,6 +274,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbProfesor);
+            this.Controls.Add(this.cbAlumno);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lbMateria);
             this.Controls.Add(this.lbGrupos);
@@ -276,12 +288,11 @@
             this.Controls.Add(this.tbCedula);
             this.Controls.Add(this.tbApellido);
             this.Controls.Add(this.tbNombre);
-            this.Controls.Add(this.cbProfesor);
-            this.Controls.Add(this.cbAlumno);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Registrar";
             this.Text = "Registrar";
+            this.Load += new System.EventHandler(this.Registrar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,8 +302,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox cbAlumno;
-        private System.Windows.Forms.CheckBox cbProfesor;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.TextBox tbApellido;
         private System.Windows.Forms.TextBox tbCedula;
@@ -305,5 +314,7 @@
         private System.Windows.Forms.ListBox lbGrupos;
         private System.Windows.Forms.ListBox lbMateria;
         private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.RadioButton cbAlumno;
+        private System.Windows.Forms.RadioButton cbProfesor;
     }
 }

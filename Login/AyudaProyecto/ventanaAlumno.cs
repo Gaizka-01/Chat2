@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using CapaLogica;
+using CapaDatos;
 
 
 namespace AyudaProyecto
@@ -18,9 +18,9 @@ namespace AyudaProyecto
         public ventanaAlumno()
         {
             InitializeComponent();
-            lblNombreConfig.Text = CapaLogica.DatoUsu.Nombre + " "+ CapaLogica.DatoUsu.Apellido;
-            lblGrupo.Text = CapaLogica.DatoUsu.Grupo;
-           
+            lblNombreConfig.Text = CapaDatos.Usuario.Nombre + " " + CapaDatos.Usuario.Apellido;
+            lblGrupo.Text = CapaDatos.Usuario.Grupo;
+            lblNickname.Text = CapaDatos.Usuario.Nickname;
         }
 
         void OcultarCrear()
@@ -28,32 +28,38 @@ namespace AyudaProyecto
             fondoCrear.Visible = false;
             grpCrear.Visible = false;
         }
-
+        void OcularConsulta()
+        {
+            txtDocente.Visible = false;
+            txtTema.Visible = false;
+            lblUsuarioContesta.Visible = false;
+            txtMensaje.Visible = false;
+            btnEnviarMensaje.Visible = false;
+            grpTema.Visible = false;
+        }
         void Mostrar()
         {
             txtDocente.Visible = true;
             txtMensaje.Visible = true;
             btnEnviarMensaje.Visible = true;
-            btnEnviarFoto.Visible = true;
         }
 
+        int posicion;
+        int IDsala;
+        string mensaje;
         private void btnMostar_Click(object sender, EventArgs e)
         {
-            CapaLogica.ConexionBD.Conexion();
-            CapaLogica.ConexionBD.conectar.Open();
-            MySqlCommand comando = new MySqlCommand("Select persona.Nombre, docente.Materia from persona, docente where persona.CI = docente.CI", CapaLogica.ConexionBD.conectar);
-            CapaLogica.ConexionBD.conectar.Close();
-            CapaLogica.ConexionBD.CerrarConexion();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -71,7 +77,7 @@ namespace AyudaProyecto
 
         }
 
-      
+
 
         private void lblNombreConfig_Click(object sender, EventArgs e)
         {
@@ -80,13 +86,14 @@ namespace AyudaProyecto
 
         private void btnCrearChat_Click(object sender, EventArgs e)
         {
-            Consulta nuevo = new Consulta();
+            chatAlumno nuevo = new chatAlumno();
             nuevo.Show();
             this.Hide();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+            OcularConsulta();
             fondoCrear.Visible = true;
             grpCrear.Visible = true;
         }
@@ -112,7 +119,7 @@ namespace AyudaProyecto
 
         private void btnNuevaConsulta_Click(object sender, EventArgs e)
         {
-            
+            lblUsuarioContesta.Visible = true;
             grpTema.Visible = true;
             txtTema.Visible = true;
             OcultarCrear();
@@ -123,49 +130,149 @@ namespace AyudaProyecto
 
         private void btnEnviarMensaje_Click(object sender, EventArgs e)
         {
-            if (txtMensaje.Text == "Message" || txtMensaje.Text == "")
+           
+            try { 
+            CapaDatos.Consultas.EnviarMensajeA(txtTema.Text, txtMensaje.Text, CapaDatos.Usuario.CI, txtDocente.Text);
+            if (CapaDatos.Usuario.Error == false)
             {
-                MessageBox.Show("Debes escribir un mensaje valido");
-            }
-            else if (txtDocente.Text == "Insertar usuario del docente" || txtMensaje.Text == "")
-            {
-                MessageBox.Show("Debes escribir el usuario del docente");
-            }
-            else if (txtTema.Text == "Escribir tema de la consulta" || txtTema.Text == "")
-            {
-                MessageBox.Show("Debes escribir el tema de la consulta");
+                dtgConsulta.DataSource = CapaDatos.Consultas.TablaMensajeA;
+                dtgConsulta.Visible = true;
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+                txtMensaje.Text = "";
+                
             }
             else
             {
-
-                CapaLogica.ConexionBD.conectar.Close();
-                CapaLogica.ConexionBD.Conexion();
-                MySqlCommand buscarDocente = new MySqlCommand("Select usuario from persona where usuario = '"+txtDocente.Text+"'", CapaLogica.ConexionBD.conectar);
-                CapaLogica.ConexionBD.conectar.Open();
-                MySqlDataReader verificar = buscarDocente.ExecuteReader();
-                
-
-                    if (verificar.Read())
-                    {
-                    CapaLogica.ConexionBD.conectar.Close();
-                    CapaLogica.ConexionBD.CerrarConexion();
-                    //Crear consulta
-                    CapaLogica.ConexionBD.conectar.Open();
-                        MySqlCommand consulta = new MySqlCommand("insert into consulta (tema, mensaje, usuarioA, usuarioP, CI) values ('"+txtTema.Text+"', '"+txtMensaje.Text+"', '"+CapaLogica.DatoUsu.NombreUsu+"', '"+txtDocente.Text+"', '"+CapaLogica.DatoUsu.CIUsu+"');", CapaLogica.ConexionBD.conectar);
-                        consulta.ExecuteNonQuery();
-                        MySqlCommand mostrarConsulta = new MySqlCommand("Select mensaje From consulta where tema = '"+txtTema.Text+"' and usuarioA = '"+CapaLogica.DatoUsu.NombreUsu+"' and usuarioP = '"+txtDocente.Text+"' and CI = '"+CapaLogica.DatoUsu.CIUsu+"' ", CapaLogica.ConexionBD.conectar);
-                        mostrarConsulta.ExecuteNonQuery();
-                        MySqlDataAdapter adaptadorConsulta = new MySqlDataAdapter();
-                        adaptadorConsulta.SelectCommand = mostrarConsulta;
-                        DataTable tablaConsulta = new DataTable();
-                        adaptadorConsulta.Fill(tablaConsulta);
-                        dtgConsulta.DataSource = tablaConsulta;
-                        dtgConsulta.Visible = true;
-                        CapaLogica.ConexionBD.CerrarConexion();
-                    }
-
-               
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
             }
+            } catch (Exception eas)
+            {
+                MessageBox.Show("Ocurrio un error \n" + eas);
+            }
+        }
+
+        private void btnChats_Click(object sender, EventArgs e)
+        {
+            chatAlumno nuevo = new chatAlumno();
+            nuevo.Show();
+            this.Hide();
+        }
+
+        private void dgNuevo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+       
+
+        }
+
+        private void btnModiNickname_Click(object sender, EventArgs e)
+        {
+            grpModificarNick.Visible = true;
+            txtNuevoNick.Visible = true;
+            btnCambiar.Visible = true;
+        }
+
+        private void txtNuevoNick_Enter(object sender, EventArgs e)
+        {
+            if (txtNuevoNick.Text == "Escribir nuevo nickname") txtNuevoNick.Text = "";
+        }
+
+        private void btnCambiar_Click(object sender, EventArgs e)
+        {
+            
+            if (txtNuevoNick.Text == "Escribir nuevo nickname" || txtNuevoNick.Text == "" )
+            {
+                MessageBox.Show("Debe insertar un Nickname valido");
+            } else
+            {
+                try
+                {
+                    string nuevonick = txtNuevoNick.Text;
+                    CapaDatos.Usuario.CambiarNickname(nuevonick, CapaDatos.Usuario.CI);
+                    lblNickname.Text = nuevonick;
+                    MessageBox.Show("Nickname actualizado");
+                } catch (Exception n)
+                {
+                    MessageBox.Show(CapaDatos.Usuario.mensaje);
+                }
+                finally
+                {
+                    grpModificarNick.Visible = false;
+                }
+                    
+            }
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            grpModificar.Visible = true;
+            OcularConsulta();
+            
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            grpModificar.Visible = false;
+            grpModificarNick.Visible = false;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            CapaDatos.Usuario.BajaUsuario(CapaDatos.Usuario.CI);
+            if (CapaDatos.Usuario.Error == false)
+            {
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+                this.Close();
+            } else
+            {
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+            }
+        }
+
+        private void btnLegajo_Click(object sender, EventArgs e)
+        {
+            Legajo nuevo = new Legajo();
+            nuevo.Show();
+            this.Hide();
+        }
+
+        private void btnAgenda_Click(object sender, EventArgs e)
+        {
+            Agenda nueva = new Agenda();
+            nueva.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            chatAlumno nuevo = new chatAlumno();
+            nuevo.Show();
+            this.Hide();
+        }
+
+        private void txtDocente_Enter(object sender, EventArgs e)
+        {
+            if (txtDocente.Text == "Insertar usuario del docente") txtDocente.Text = "";
+        }
+
+        private void txtTema_Enter(object sender, EventArgs e)
+        {
+            if (txtTema.Text == "Escribir tema de la consulta") txtTema.Text = "";
+        }
+
+        private void txtMensaje_Enter(object sender, EventArgs e)
+        {
+            if (txtMensaje.Text == "Message") txtMensaje.Text = "";
         }
     }
 }

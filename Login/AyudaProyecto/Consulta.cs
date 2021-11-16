@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using CapaLogica;
+using CapaDatos;
 namespace AyudaProyecto
 {
     public partial class Consulta : Form
@@ -16,23 +16,20 @@ namespace AyudaProyecto
         public Consulta()
         {
             InitializeComponent();
-            lblNombreConfig.Text = "" + CapaLogica.DatoUsu.Nombre + "" + CapaLogica.DatoUsu.Apellido;
-            lblGrupo.Text = CapaLogica.DatoUsu.Grupo;
-            CapaLogica.ConexionBD.Conexion();
-            MySqlCommand comando = new MySqlCommand("Select tema, usuarioP, CI From consulta where usuarioA = '"+CapaLogica.DatoUsu.NombreUsu+"' group by tema;", CapaLogica.ConexionBD.conectar);
-            MySqlDataAdapter adaptador = new MySqlDataAdapter();
-            adaptador.SelectCommand = comando;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dgNuevo.DataSource = tabla;
-            CapaLogica.ConexionBD.CerrarConexion();
+            lblNombreConfig.Text = CapaDatos.Usuario.Nombre + "" + CapaDatos.Usuario.Apellido;
+            lblGrupo.Text = CapaDatos.Usuario.Grupo;
+            lblNickname.Text = CapaDatos.Usuario.Nickname;
+            CapaDatos.Consultas.MostrarConsultasA(CapaDatos.Usuario.CI);
+            dgNuevo.DataSource = CapaDatos.Consultas.Tabla;
+
         }
         string temaNuevo;
         string temaBuscar;
         int posicion;
         string consultaDocente;
-        int CIdocente;
+        int consultaID;
         string consultaTema;
+        string usuarioD;
 
     
 
@@ -52,14 +49,7 @@ namespace AyudaProyecto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CapaLogica.ConexionBD.Conexion();
-            MySqlCommand comando = new MySqlCommand("Select tema From consulta where CI = '"+CapaLogica.DatoUsu.CIUsu+"' group by tema;", CapaLogica.ConexionBD.conectar);
-            MySqlDataAdapter adaptador = new MySqlDataAdapter();
-            adaptador.SelectCommand = comando;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dgNuevo.DataSource = tabla;
-            CapaLogica.ConexionBD.CerrarConexion();
+           
 
            
 
@@ -69,34 +59,22 @@ namespace AyudaProyecto
         {
             posicion = e.RowIndex;
             DataGridViewRow linea = dgNuevo.Rows[posicion];
-            consultaTema = linea.Cells[0].Value.ToString();
-            consultaDocente = linea.Cells[1].Value.ToString();
-            CapaLogica.ConexionBD.Conexion();
-            MySqlCommand mostrar = new MySqlCommand("Select mensaje From consulta where tema = '"+consultaTema+"' and usuarioA = '"+CapaLogica.DatoUsu.NombreUsu+"' and usuarioP = '"+consultaDocente+"' and CI = '"+CapaLogica.DatoUsu.CIUsu+"' ", CapaLogica.ConexionBD.conectar);
-            mostrar.ExecuteNonQuery();
-            MySqlDataAdapter adaptador = new MySqlDataAdapter();
-            adaptador.SelectCommand = mostrar;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dtgConsultaE.DataSource = tabla;
+            consultaID = Convert.ToInt32(linea.Cells[2].Value);
+            usuarioD = linea.Cells[1].Value.ToString();
+           try { 
+            CapaDatos.Usuario.DevolverPersona(usuarioD);
+            CapaDatos.Usuario.DevolverProfesor(CapaDatos.Usuario.CIP);
+            lblUsuarioContesta.Text = "Para: " + CapaDatos.Usuario.NombreP + " " + CapaDatos.Usuario.ApellidoP + " Materia: " + CapaDatos.Usuario.materiaP;
+            CapaDatos.Consultas.MostrarMensajeConsultaA(consultaID);
+            dtgConsultaE.DataSource = CapaDatos.Consultas.TablaMensajeA;
+            CapaDatos.Consultas.MostrarMensajeConsultaP(consultaID);
+            dtgConsultaP.DataSource = CapaDatos.Consultas.TablaMensajeP;
             dtgConsultaE.Visible = true;
-            CapaLogica.ConexionBD.CerrarConexion();
-
-            CapaLogica.ConexionBD.Conexion();
-            MySqlCommand guardarP = new MySqlCommand("Select CI From docente where usuario = '"+consultaDocente+"'", CapaLogica.ConexionBD.conectar);
-            CIdocente = Convert.ToInt32(guardarP.ExecuteScalar());
-            MySqlCommand mostrarP = new MySqlCommand("Select mensaje From consulta where tema = '"+consultaTema+"' and usuarioA = '"+CapaLogica.DatoUsu.NombreUsu+"' and usuarioP = '"+consultaDocente+"' and CI = '"+CIdocente+"' ", CapaLogica.ConexionBD.conectar);
-            mostrarP.ExecuteNonQuery();
-            MySqlDataAdapter adaptadorP = new MySqlDataAdapter();
-            adaptadorP.SelectCommand = mostrarP;
-            DataTable tablaP = new DataTable();
-            adaptadorP.Fill(tablaP);
-            dtgConsultaP.DataSource = tablaP;
             dtgConsultaP.Visible = true;
-            CapaLogica.ConexionBD.CerrarConexion();
-
-            lblUsuarioContesta.Text = "Para: "+consultaDocente;
-
+            } catch (Exception ea)
+            {
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+            }
         }
 
         private void dtgConsultaE_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -106,18 +84,26 @@ namespace AyudaProyecto
 
         private void btnEnviarMensaje_Click(object sender, EventArgs e)
         {
-            CapaLogica.ConexionBD.Conexion();
-            MySqlCommand insertar = new MySqlCommand("update consulta set mensaje = '"+txtM.Text+ "' where CI = '"+CapaLogica.DatoUsu.CIUsu+ "' and tema = '"+consultaTema+"' and usuarioP = '"+ consultaDocente + "' ", CapaLogica.ConexionBD.conectar);
-            insertar.ExecuteNonQuery();
-            MySqlCommand mostrar = new MySqlCommand("Select mensaje From consulta where tema = '" + consultaTema + "' and usuarioA = '" + CapaLogica.DatoUsu.NombreUsu + "' and usuarioP = '" + consultaDocente + "' and CI = '" + CapaLogica.DatoUsu.CIUsu + "' ", CapaLogica.ConexionBD.conectar);
-            mostrar.ExecuteNonQuery();
-            MySqlDataAdapter adaptador = new MySqlDataAdapter();
-            adaptador.SelectCommand = mostrar;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dtgConsultaE.DataSource = tabla;
-            CapaLogica.ConexionBD.CerrarConexion();
-            txtM.Text = "Message";
+            
+        }
+
+        private void btnChats_Click(object sender, EventArgs e)
+        {
+            chatAlumno nuevo = new chatAlumno();
+            nuevo.Show();
+            this.Hide();
+        }
+
+        private void lblX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lblBack_Click(object sender, EventArgs e)
+        {
+            ventanaAlumno nuevo = new ventanaAlumno();
+            nuevo.Show();
+            this.Hide();
         }
     }
 }

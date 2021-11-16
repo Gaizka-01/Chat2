@@ -46,6 +46,7 @@
             this.Logo = new System.Windows.Forms.PictureBox();
             this.lblMenssages = new System.Windows.Forms.Label();
             this.txtCI = new System.Windows.Forms.TextBox();
+            this.btnAccederAdmin = new System.Windows.Forms.Button();
             this.groupUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAlumno)).BeginInit();
@@ -63,9 +64,10 @@
             this.tbUsuario.Location = new System.Drawing.Point(233, 179);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(306, 20);
-            this.tbUsuario.TabIndex = 5;
+            this.tbUsuario.TabIndex = 1;
             this.tbUsuario.Text = "Usuario";
             this.tbUsuario.Visible = false;
+            this.tbUsuario.Enter += new System.EventHandler(this.tbUsuario_Enter);
             // 
             // tbContraseña
             // 
@@ -76,9 +78,11 @@
             this.tbContraseña.Location = new System.Drawing.Point(233, 231);
             this.tbContraseña.Name = "tbContraseña";
             this.tbContraseña.Size = new System.Drawing.Size(306, 20);
-            this.tbContraseña.TabIndex = 6;
+            this.tbContraseña.TabIndex = 3;
             this.tbContraseña.Text = "Contraseña";
             this.tbContraseña.Visible = false;
+            this.tbContraseña.TextChanged += new System.EventHandler(this.tbContraseña_TextChanged);
+            this.tbContraseña.Enter += new System.EventHandler(this.tbContraseña_Enter);
             // 
             // btnRegistrar
             // 
@@ -139,7 +143,7 @@
             this.groupUsuario.Controls.Add(this.picAlumno);
             this.groupUsuario.Controls.Add(this.picDocente);
             this.groupUsuario.Controls.Add(this.pictureBox1);
-            this.groupUsuario.Location = new System.Drawing.Point(132, 7);
+            this.groupUsuario.Location = new System.Drawing.Point(93, 1);
             this.groupUsuario.Name = "groupUsuario";
             this.groupUsuario.Size = new System.Drawing.Size(584, 373);
             this.groupUsuario.TabIndex = 125;
@@ -286,16 +290,34 @@
             this.txtCI.Location = new System.Drawing.Point(233, 205);
             this.txtCI.Name = "txtCI";
             this.txtCI.Size = new System.Drawing.Size(306, 20);
-            this.txtCI.TabIndex = 137;
+            this.txtCI.TabIndex = 2;
             this.txtCI.Text = "Cedula";
             this.txtCI.Visible = false;
+            this.txtCI.Enter += new System.EventHandler(this.txtCI_Enter);
+            // 
+            // btnAccederAdmin
+            // 
+            this.btnAccederAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAccederAdmin.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnAccederAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccederAdmin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccederAdmin.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnAccederAdmin.Location = new System.Drawing.Point(678, 330);
+            this.btnAccederAdmin.Name = "btnAccederAdmin";
+            this.btnAccederAdmin.Size = new System.Drawing.Size(97, 29);
+            this.btnAccederAdmin.TabIndex = 138;
+            this.btnAccederAdmin.Text = "Acceder";
+            this.btnAccederAdmin.UseVisualStyleBackColor = true;
+            this.btnAccederAdmin.Visible = false;
+            this.btnAccederAdmin.Click += new System.EventHandler(this.btnAccederAdmin_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(800, 392);
+            this.ClientSize = new System.Drawing.Size(800, 386);
+            this.Controls.Add(this.btnAccederAdmin);
             this.Controls.Add(this.lblMenssages);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.groupUsuario);
@@ -307,6 +329,7 @@
             this.Controls.Add(this.txtCI);
             this.Name = "Form1";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupUsuario.ResumeLayout(false);
             this.groupUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -338,5 +361,6 @@
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Label lblMenssages;
         private System.Windows.Forms.TextBox txtCI;
+        private System.Windows.Forms.Button btnAccederAdmin;
     }
 }

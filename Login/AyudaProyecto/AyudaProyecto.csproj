@@ -56,17 +56,41 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda.Designer.cs">
+      <DependentUpon>Agenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chatAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chatAlumno.Designer.cs">
+      <DependentUpon>chatAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChatItems\Enviado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChatItems\Enviado.Designer.cs">
+      <DependentUpon>Enviado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChatItems\Recibido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChatItems\Recibido.Designer.cs">
+      <DependentUpon>Recibido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chatProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chatProfesor.Designer.cs">
+      <DependentUpon>chatProfesor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Consulta.Designer.cs">
       <DependentUpon>Consulta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="consultaProfesor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="consultaProfesor.Designer.cs">
-      <DependentUpon>consultaProfesor.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -74,11 +98,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Legajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Legajo.Designer.cs">
+      <DependentUpon>Legajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarUsuario.Designer.cs">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registrar.Designer.cs">
       <DependentUpon>Registrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ventanaAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventanaAdministrador.designer.cs">
+      <DependentUpon>ventanaAdministrador.cs</DependentUpon>
     </Compile>
     <Compile Include="ventanaAlumno.cs">
       <SubType>Form</SubType>
@@ -107,14 +149,32 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Agenda.resx">
+      <DependentUpon>Agenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chatAlumno.resx">
+      <DependentUpon>chatAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChatItems\Enviado.resx">
+      <DependentUpon>Enviado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChatItems\Recibido.resx">
+      <DependentUpon>Recibido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chatProfesor.resx">
+      <DependentUpon>chatProfesor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consulta.resx">
       <DependentUpon>Consulta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="consultaProfesor.resx">
-      <DependentUpon>consultaProfesor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Legajo.resx">
+      <DependentUpon>Legajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventanaAdministrador.resx">
+      <DependentUpon>ventanaAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ventanaAlumno.resx">
       <DependentUpon>ventanaAlumno.cs</DependentUpon>
@@ -156,9 +219,9 @@
     <None Include="Resources\icono.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
-      <Project>{ca29face-a1fb-484e-8c08-d19f62a14b26}</Project>
-      <Name>CapaLogica</Name>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{57c0ffec-0e29-4116-9635-85a984a75ed5}</Project>
+      <Name>CapaDatos</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

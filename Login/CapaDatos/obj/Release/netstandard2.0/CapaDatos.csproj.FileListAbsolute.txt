@@ -1,0 +1,13 @@
+C:\Users\cguanada\source\repos\Login\CapaDatos\bin\Release\netstandard2.0\CapaDatos.deps.json
+C:\Users\cguanada\source\repos\Login\CapaDatos\bin\Release\netstandard2.0\CapaDatos.dll
+C:\Users\cguanada\source\repos\Login\CapaDatos\bin\Release\netstandard2.0\CapaDatos.pdb
+C:\Users\cguanada\source\repos\Login\CapaDatos\bin\Release\netstandard2.0\CapaLogica.dll
+C:\Users\cguanada\source\repos\Login\CapaDatos\bin\Release\netstandard2.0\MySql.Data.dll
+C:\Users\cguanada\source\repos\Login\CapaDatos\bin\Release\netstandard2.0\CapaLogica.pdb
+C:\Users\cguanada\source\repos\Login\CapaDatos\obj\Release\netstandard2.0\CapaDatos.csprojAssemblyReference.cache
+C:\Users\cguanada\source\repos\Login\CapaDatos\obj\Release\netstandard2.0\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\cguanada\source\repos\Login\CapaDatos\obj\Release\netstandard2.0\CapaDatos.AssemblyInfoInputs.cache
+C:\Users\cguanada\source\repos\Login\CapaDatos\obj\Release\netstandard2.0\CapaDatos.AssemblyInfo.cs
+C:\Users\cguanada\source\repos\Login\CapaDatos\obj\Release\netstandard2.0\CapaDatos.csproj.CopyComplete
+C:\Users\cguanada\source\repos\Login\CapaDatos\obj\Release\netstandard2.0\CapaDatos.dll
+C:\Users\cguanada\source\repos\Login\CapaDatos\obj\Release\netstandard2.0\CapaDatos.pdb

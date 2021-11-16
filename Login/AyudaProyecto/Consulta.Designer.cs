@@ -47,6 +47,9 @@
             this.lblUsuarioContesta = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtM = new System.Windows.Forms.TextBox();
+            this.lblNickname = new System.Windows.Forms.Label();
+            this.lblBack = new System.Windows.Forms.Label();
+            this.lblX = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaE)).BeginInit();
             this.pOpicones.SuspendLayout();
@@ -85,6 +88,7 @@
             // 
             this.pOpicones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.pOpicones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pOpicones.Controls.Add(this.lblNickname);
             this.pOpicones.Controls.Add(this.button1);
             this.pOpicones.Controls.Add(this.btnChats);
             this.pOpicones.Controls.Add(this.panel2);
@@ -95,9 +99,9 @@
             this.pOpicones.Controls.Add(this.dgNuevo);
             this.pOpicones.Controls.Add(this.textBox1);
             this.pOpicones.Controls.Add(this.pictureBox5);
-            this.pOpicones.Location = new System.Drawing.Point(13, 12);
+            this.pOpicones.Location = new System.Drawing.Point(13, 23);
             this.pOpicones.Name = "pOpicones";
-            this.pOpicones.Size = new System.Drawing.Size(250, 426);
+            this.pOpicones.Size = new System.Drawing.Size(250, 415);
             this.pOpicones.TabIndex = 27;
             // 
             // button1
@@ -132,6 +136,7 @@
             this.btnChats.TabIndex = 26;
             this.btnChats.Text = "Chats";
             this.btnChats.UseVisualStyleBackColor = false;
+            this.btnChats.Click += new System.EventHandler(this.btnChats_Click);
             // 
             // panel2
             // 
@@ -222,9 +227,9 @@
             this.pNuevo.Controls.Add(this.txtM);
             this.pNuevo.Controls.Add(this.dtgConsultaE);
             this.pNuevo.Controls.Add(this.dtgConsultaP);
-            this.pNuevo.Location = new System.Drawing.Point(269, 12);
+            this.pNuevo.Location = new System.Drawing.Point(269, 23);
             this.pNuevo.Name = "pNuevo";
-            this.pNuevo.Size = new System.Drawing.Size(522, 426);
+            this.pNuevo.Size = new System.Drawing.Size(522, 415);
             this.pNuevo.TabIndex = 28;
             // 
             // btnEnviarMensaje
@@ -245,7 +250,7 @@
             this.groupBox5.Controls.Add(this.lblUsuarioContesta);
             this.groupBox5.Location = new System.Drawing.Point(0, -6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(521, 65);
+            this.groupBox5.Size = new System.Drawing.Size(521, 56);
             this.groupBox5.TabIndex = 25;
             this.groupBox5.TabStop = false;
             // 
@@ -283,16 +288,52 @@
             this.txtM.TabIndex = 21;
             this.txtM.Text = "Message";
             // 
+            // lblNickname
+            // 
+            this.lblNickname.AutoSize = true;
+            this.lblNickname.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNickname.ForeColor = System.Drawing.Color.LightGray;
+            this.lblNickname.Location = new System.Drawing.Point(73, 39);
+            this.lblNickname.Name = "lblNickname";
+            this.lblNickname.Size = new System.Drawing.Size(0, 16);
+            this.lblNickname.TabIndex = 28;
+            // 
+            // lblBack
+            // 
+            this.lblBack.AutoSize = true;
+            this.lblBack.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.ForeColor = System.Drawing.Color.LightGray;
+            this.lblBack.Location = new System.Drawing.Point(708, 3);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(44, 18);
+            this.lblBack.TabIndex = 35;
+            this.lblBack.Text = "Atras";
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
+            // 
+            // lblX
+            // 
+            this.lblX.AutoSize = true;
+            this.lblX.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblX.ForeColor = System.Drawing.Color.LightGray;
+            this.lblX.Location = new System.Drawing.Point(765, 0);
+            this.lblX.Name = "lblX";
+            this.lblX.Size = new System.Drawing.Size(23, 23);
+            this.lblX.TabIndex = 34;
+            this.lblX.Text = "X";
+            this.lblX.Click += new System.EventHandler(this.lblX_Click);
+            // 
             // Consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(800, 461);
+            this.ClientSize = new System.Drawing.Size(800, 453);
+            this.Controls.Add(this.lblBack);
+            this.Controls.Add(this.lblX);
             this.Controls.Add(this.pNuevo);
             this.Controls.Add(this.pOpicones);
             this.Name = "Consulta";
-            this.Text = "v";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaE)).EndInit();
             this.pOpicones.ResumeLayout(false);
@@ -307,6 +348,7 @@
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -331,5 +373,8 @@
         private System.Windows.Forms.Label lblUsuarioContesta;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtM;
+        private System.Windows.Forms.Label lblNickname;
+        private System.Windows.Forms.Label lblBack;
+        private System.Windows.Forms.Label lblX;
     }
 }

@@ -1,0 +1,11 @@
+C:\Users\cguanada\source\repos\Login\CapaLogica\bin\Release\netstandard2.0\CapaLogica.deps.json
+C:\Users\cguanada\source\repos\Login\CapaLogica\bin\Release\netstandard2.0\CapaLogica.dll
+C:\Users\cguanada\source\repos\Login\CapaLogica\bin\Release\netstandard2.0\CapaLogica.pdb
+C:\Users\cguanada\source\repos\Login\CapaLogica\bin\Release\netstandard2.0\MySql.Data.dll
+C:\Users\cguanada\source\repos\Login\CapaLogica\obj\Release\netstandard2.0\CapaLogica.csproj.CoreCompileInputs.cache
+C:\Users\cguanada\source\repos\Login\CapaLogica\obj\Release\netstandard2.0\CapaLogica.AssemblyInfoInputs.cache
+C:\Users\cguanada\source\repos\Login\CapaLogica\obj\Release\netstandard2.0\CapaLogica.AssemblyInfo.cs
+C:\Users\cguanada\source\repos\Login\CapaLogica\obj\Release\netstandard2.0\CapaLogica.csproj.CopyComplete
+C:\Users\cguanada\source\repos\Login\CapaLogica\obj\Release\netstandard2.0\CapaLogica.dll
+C:\Users\cguanada\source\repos\Login\CapaLogica\obj\Release\netstandard2.0\CapaLogica.pdb
+C:\Users\cguanada\source\repos\Login\CapaLogica\obj\Release\netstandard2.0\CapaLogica.csprojAssemblyReference.cache

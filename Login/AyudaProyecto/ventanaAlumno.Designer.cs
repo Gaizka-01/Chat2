@@ -35,12 +35,18 @@
             this.btnMostar = new System.Windows.Forms.Button();
             this.grpCrear = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnCrearChat = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnNuevaConsulta = new System.Windows.Forms.PictureBox();
+            this.dtgConsulta = new System.Windows.Forms.DataGridView();
+            this.btnEnviarMensaje = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDocente = new System.Windows.Forms.TextBox();
             this.lblUsuarioContesta = new System.Windows.Forms.Label();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -50,37 +56,46 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pOpicones = new System.Windows.Forms.Panel();
+            this.grpModificarNick = new System.Windows.Forms.GroupBox();
+            this.btnCambiar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNuevoNick = new System.Windows.Forms.TextBox();
+            this.grpModificar = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnAgenda = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnLegajo = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnModiNickname = new System.Windows.Forms.Button();
+            this.lblNickname = new System.Windows.Forms.Label();
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnChats = new System.Windows.Forms.Button();
-            this.txtDocente = new System.Windows.Forms.TextBox();
-            this.dtgConsulta = new System.Windows.Forms.DataGridView();
-            this.grpTema = new System.Windows.Forms.GroupBox();
-            this.txtTema = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btnCrearChat = new System.Windows.Forms.PictureBox();
-            this.btnNuevaConsulta = new System.Windows.Forms.PictureBox();
-            this.btnEnviarMensaje = new System.Windows.Forms.PictureBox();
-            this.btnEnviarFoto = new System.Windows.Forms.PictureBox();
+            this.grpTema = new System.Windows.Forms.GroupBox();
+            this.txtTema = new System.Windows.Forms.TextBox();
+            this.lblX = new System.Windows.Forms.Label();
             this.pNuevo.SuspendLayout();
             this.fondoCrear.SuspendLayout();
             this.grpCrear.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCrearChat)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNuevaConsulta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsulta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarMensaje)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgNuevo)).BeginInit();
             this.pOpicones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgConsulta)).BeginInit();
-            this.grpTema.SuspendLayout();
+            this.grpModificarNick.SuspendLayout();
+            this.grpModificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCrearChat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNuevaConsulta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarMensaje)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarFoto)).BeginInit();
+            this.grpTema.SuspendLayout();
             this.SuspendLayout();
             // 
             // pNuevo
@@ -91,11 +106,10 @@
             this.pNuevo.Controls.Add(this.dtgConsulta);
             this.pNuevo.Controls.Add(this.btnEnviarMensaje);
             this.pNuevo.Controls.Add(this.groupBox1);
-            this.pNuevo.Controls.Add(this.btnEnviarFoto);
             this.pNuevo.Controls.Add(this.txtMensaje);
-            this.pNuevo.Location = new System.Drawing.Point(268, 24);
+            this.pNuevo.Location = new System.Drawing.Point(268, 35);
             this.pNuevo.Name = "pNuevo";
-            this.pNuevo.Size = new System.Drawing.Size(522, 420);
+            this.pNuevo.Size = new System.Drawing.Size(522, 409);
             this.pNuevo.TabIndex = 6;
             // 
             // fondoCrear
@@ -104,7 +118,7 @@
             this.fondoCrear.Controls.Add(this.label1);
             this.fondoCrear.Controls.Add(this.btnCancelarCrear);
             this.fondoCrear.Controls.Add(this.btnMostar);
-            this.fondoCrear.Location = new System.Drawing.Point(8, 76);
+            this.fondoCrear.Location = new System.Drawing.Point(8, 63);
             this.fondoCrear.Name = "fondoCrear";
             this.fondoCrear.Size = new System.Drawing.Size(506, 65);
             this.fondoCrear.TabIndex = 24;
@@ -155,11 +169,12 @@
             this.grpCrear.Controls.Add(this.groupBox4);
             this.grpCrear.Controls.Add(this.groupBox3);
             this.grpCrear.Controls.Add(this.groupBox2);
-            this.grpCrear.Location = new System.Drawing.Point(8, 70);
+            this.grpCrear.Location = new System.Drawing.Point(8, 57);
             this.grpCrear.Name = "grpCrear";
             this.grpCrear.Size = new System.Drawing.Size(506, 307);
             this.grpCrear.TabIndex = 23;
             this.grpCrear.TabStop = false;
+            this.grpCrear.Text = " ";
             this.grpCrear.Visible = false;
             // 
             // groupBox4
@@ -172,6 +187,16 @@
             this.groupBox4.Size = new System.Drawing.Size(145, 183);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.pictureBox4.Location = new System.Drawing.Point(18, 63);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(103, 99);
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label3
             // 
@@ -194,6 +219,16 @@
             this.groupBox3.Size = new System.Drawing.Size(145, 183);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
+            // 
+            // btnCrearChat
+            // 
+            this.btnCrearChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.btnCrearChat.Location = new System.Drawing.Point(21, 63);
+            this.btnCrearChat.Name = "btnCrearChat";
+            this.btnCrearChat.Size = new System.Drawing.Size(103, 99);
+            this.btnCrearChat.TabIndex = 6;
+            this.btnCrearChat.TabStop = false;
+            this.btnCrearChat.Click += new System.EventHandler(this.btnCrearChat_Click);
             // 
             // label4
             // 
@@ -229,16 +264,63 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Crear Consulta";
             // 
+            // btnNuevaConsulta
+            // 
+            this.btnNuevaConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.btnNuevaConsulta.Location = new System.Drawing.Point(19, 63);
+            this.btnNuevaConsulta.Name = "btnNuevaConsulta";
+            this.btnNuevaConsulta.Size = new System.Drawing.Size(103, 99);
+            this.btnNuevaConsulta.TabIndex = 1;
+            this.btnNuevaConsulta.TabStop = false;
+            this.btnNuevaConsulta.Click += new System.EventHandler(this.btnNuevaConsulta_Click);
+            // 
+            // dtgConsulta
+            // 
+            this.dtgConsulta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dtgConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgConsulta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dtgConsulta.Location = new System.Drawing.Point(54, 156);
+            this.dtgConsulta.Name = "dtgConsulta";
+            this.dtgConsulta.Size = new System.Drawing.Size(419, 206);
+            this.dtgConsulta.TabIndex = 26;
+            this.dtgConsulta.Visible = false;
+            // 
+            // btnEnviarMensaje
+            // 
+            this.btnEnviarMensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.btnEnviarMensaje.Image = global::AyudaProyecto.Properties.Resources.Boton_Enviar_Mjs;
+            this.btnEnviarMensaje.Location = new System.Drawing.Point(476, 377);
+            this.btnEnviarMensaje.Name = "btnEnviarMensaje";
+            this.btnEnviarMensaje.Size = new System.Drawing.Size(28, 23);
+            this.btnEnviarMensaje.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEnviarMensaje.TabIndex = 22;
+            this.btnEnviarMensaje.TabStop = false;
+            this.btnEnviarMensaje.Visible = false;
+            this.btnEnviarMensaje.Click += new System.EventHandler(this.btnEnviarMensaje_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.groupBox1.Controls.Add(this.txtDocente);
             this.groupBox1.Controls.Add(this.lblUsuarioContesta);
-            this.groupBox1.Location = new System.Drawing.Point(0, -6);
+            this.groupBox1.Location = new System.Drawing.Point(0, -4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(521, 65);
+            this.groupBox1.Size = new System.Drawing.Size(521, 55);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
+            // 
+            // txtDocente
+            // 
+            this.txtDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtDocente.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(162)))), ((int)(((byte)(162)))));
+            this.txtDocente.Location = new System.Drawing.Point(50, 24);
+            this.txtDocente.Name = "txtDocente";
+            this.txtDocente.Size = new System.Drawing.Size(210, 22);
+            this.txtDocente.TabIndex = 27;
+            this.txtDocente.Text = "Insertar usuario del docente";
+            this.txtDocente.Visible = false;
+            this.txtDocente.Enter += new System.EventHandler(this.txtDocente_Enter);
             // 
             // lblUsuarioContesta
             // 
@@ -257,12 +339,13 @@
             this.txtMensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.txtMensaje.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(162)))), ((int)(((byte)(162)))));
-            this.txtMensaje.Location = new System.Drawing.Point(56, 384);
+            this.txtMensaje.Location = new System.Drawing.Point(41, 377);
             this.txtMensaje.Name = "txtMensaje";
             this.txtMensaje.Size = new System.Drawing.Size(417, 23);
             this.txtMensaje.TabIndex = 21;
             this.txtMensaje.Text = "Message";
             this.txtMensaje.Visible = false;
+            this.txtMensaje.Enter += new System.EventHandler(this.txtMensaje_Enter);
             // 
             // textBox1
             // 
@@ -283,6 +366,7 @@
             this.dgNuevo.ReadOnly = true;
             this.dgNuevo.Size = new System.Drawing.Size(242, 257);
             this.dgNuevo.TabIndex = 19;
+            this.dgNuevo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgNuevo_CellContentClick);
             // 
             // lblNombreConfig
             // 
@@ -327,6 +411,9 @@
             // 
             this.pOpicones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.pOpicones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pOpicones.Controls.Add(this.grpModificarNick);
+            this.pOpicones.Controls.Add(this.grpModificar);
+            this.pOpicones.Controls.Add(this.lblNickname);
             this.pOpicones.Controls.Add(this.btnConsultas);
             this.pOpicones.Controls.Add(this.btnChats);
             this.pOpicones.Controls.Add(this.panel2);
@@ -337,10 +424,195 @@
             this.pOpicones.Controls.Add(this.dgNuevo);
             this.pOpicones.Controls.Add(this.textBox1);
             this.pOpicones.Controls.Add(this.pictureBox5);
-            this.pOpicones.Location = new System.Drawing.Point(12, 24);
+            this.pOpicones.Location = new System.Drawing.Point(12, 35);
             this.pOpicones.Name = "pOpicones";
-            this.pOpicones.Size = new System.Drawing.Size(250, 420);
+            this.pOpicones.Size = new System.Drawing.Size(250, 409);
             this.pOpicones.TabIndex = 5;
+            // 
+            // grpModificarNick
+            // 
+            this.grpModificarNick.Controls.Add(this.btnCambiar);
+            this.grpModificarNick.Controls.Add(this.label5);
+            this.grpModificarNick.Controls.Add(this.txtNuevoNick);
+            this.grpModificarNick.Location = new System.Drawing.Point(0, 247);
+            this.grpModificarNick.Name = "grpModificarNick";
+            this.grpModificarNick.Size = new System.Drawing.Size(246, 101);
+            this.grpModificarNick.TabIndex = 29;
+            this.grpModificarNick.TabStop = false;
+            this.grpModificarNick.Visible = false;
+            // 
+            // btnCambiar
+            // 
+            this.btnCambiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.btnCambiar.FlatAppearance.BorderSize = 0;
+            this.btnCambiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnCambiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiar.ForeColor = System.Drawing.Color.White;
+            this.btnCambiar.Location = new System.Drawing.Point(84, 67);
+            this.btnCambiar.Name = "btnCambiar";
+            this.btnCambiar.Size = new System.Drawing.Size(71, 25);
+            this.btnCambiar.TabIndex = 30;
+            this.btnCambiar.Text = "Cambiar";
+            this.btnCambiar.UseVisualStyleBackColor = false;
+            this.btnCambiar.Visible = false;
+            this.btnCambiar.Click += new System.EventHandler(this.btnCambiar_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.label5.Location = new System.Drawing.Point(61, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 17);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Modificar Nickname";
+            // 
+            // txtNuevoNick
+            // 
+            this.txtNuevoNick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtNuevoNick.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNuevoNick.ForeColor = System.Drawing.Color.LightGray;
+            this.txtNuevoNick.Location = new System.Drawing.Point(13, 37);
+            this.txtNuevoNick.Name = "txtNuevoNick";
+            this.txtNuevoNick.Size = new System.Drawing.Size(221, 23);
+            this.txtNuevoNick.TabIndex = 27;
+            this.txtNuevoNick.Text = "Escribir nuevo nickname";
+            this.txtNuevoNick.Visible = false;
+            this.txtNuevoNick.Enter += new System.EventHandler(this.txtNuevoNick_Enter);
+            // 
+            // grpModificar
+            // 
+            this.grpModificar.Controls.Add(this.panel5);
+            this.grpModificar.Controls.Add(this.btnAgenda);
+            this.grpModificar.Controls.Add(this.panel4);
+            this.grpModificar.Controls.Add(this.btnLegajo);
+            this.grpModificar.Controls.Add(this.btnEliminar);
+            this.grpModificar.Controls.Add(this.panel3);
+            this.grpModificar.Controls.Add(this.button1);
+            this.grpModificar.Controls.Add(this.btnModiNickname);
+            this.grpModificar.Location = new System.Drawing.Point(3, 56);
+            this.grpModificar.Name = "grpModificar";
+            this.grpModificar.Size = new System.Drawing.Size(243, 185);
+            this.grpModificar.TabIndex = 28;
+            this.grpModificar.TabStop = false;
+            this.grpModificar.Visible = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(8, 117);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(224, 1);
+            this.panel5.TabIndex = 16;
+            // 
+            // btnAgenda
+            // 
+            this.btnAgenda.FlatAppearance.BorderSize = 0;
+            this.btnAgenda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnAgenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgenda.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.btnAgenda.Location = new System.Drawing.Point(47, 120);
+            this.btnAgenda.Name = "btnAgenda";
+            this.btnAgenda.Size = new System.Drawing.Size(147, 26);
+            this.btnAgenda.TabIndex = 29;
+            this.btnAgenda.Text = "Agenda docentes";
+            this.btnAgenda.UseVisualStyleBackColor = true;
+            this.btnAgenda.Click += new System.EventHandler(this.btnAgenda_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Location = new System.Drawing.Point(8, 80);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(224, 1);
+            this.panel4.TabIndex = 15;
+            // 
+            // btnLegajo
+            // 
+            this.btnLegajo.FlatAppearance.BorderSize = 0;
+            this.btnLegajo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnLegajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnLegajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLegajo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLegajo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.btnLegajo.Location = new System.Drawing.Point(47, 87);
+            this.btnLegajo.Name = "btnLegajo";
+            this.btnLegajo.Size = new System.Drawing.Size(147, 26);
+            this.btnLegajo.TabIndex = 28;
+            this.btnLegajo.Text = "Legajo";
+            this.btnLegajo.UseVisualStyleBackColor = true;
+            this.btnLegajo.Click += new System.EventHandler(this.btnLegajo_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.btnEliminar.Location = new System.Drawing.Point(47, 53);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(147, 26);
+            this.btnEliminar.TabIndex = 27;
+            this.btnEliminar.Text = "Eliminar Usuario";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(11, 44);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(224, 1);
+            this.panel3.TabIndex = 14;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.button1.Location = new System.Drawing.Point(3, 159);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 21);
+            this.button1.TabIndex = 26;
+            this.button1.Text = " Volver";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // btnModiNickname
+            // 
+            this.btnModiNickname.FlatAppearance.BorderSize = 0;
+            this.btnModiNickname.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnModiNickname.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnModiNickname.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModiNickname.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModiNickname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.btnModiNickname.Location = new System.Drawing.Point(47, 17);
+            this.btnModiNickname.Name = "btnModiNickname";
+            this.btnModiNickname.Size = new System.Drawing.Size(147, 26);
+            this.btnModiNickname.TabIndex = 25;
+            this.btnModiNickname.Text = "Modificar Nickname";
+            this.btnModiNickname.UseVisualStyleBackColor = true;
+            this.btnModiNickname.Click += new System.EventHandler(this.btnModiNickname_Click);
+            // 
+            // lblNickname
+            // 
+            this.lblNickname.AutoSize = true;
+            this.lblNickname.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNickname.ForeColor = System.Drawing.Color.LightGray;
+            this.lblNickname.Location = new System.Drawing.Point(65, 39);
+            this.lblNickname.Name = "lblNickname";
+            this.lblNickname.Size = new System.Drawing.Size(0, 16);
+            this.lblNickname.TabIndex = 27;
             // 
             // btnConsultas
             // 
@@ -351,7 +623,7 @@
             this.btnConsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultas.ForeColor = System.Drawing.Color.White;
-            this.btnConsultas.Location = new System.Drawing.Point(11, 379);
+            this.btnConsultas.Location = new System.Drawing.Point(11, 376);
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Size = new System.Drawing.Size(83, 26);
             this.btnConsultas.TabIndex = 26;
@@ -368,35 +640,36 @@
             this.btnChats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChats.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChats.ForeColor = System.Drawing.Color.White;
-            this.btnChats.Location = new System.Drawing.Point(154, 379);
+            this.btnChats.Location = new System.Drawing.Point(154, 376);
             this.btnChats.Name = "btnChats";
             this.btnChats.Size = new System.Drawing.Size(83, 26);
             this.btnChats.TabIndex = 26;
             this.btnChats.Text = "Chats";
             this.btnChats.UseVisualStyleBackColor = false;
+            this.btnChats.Click += new System.EventHandler(this.btnChats_Click);
             // 
-            // txtDocente
+            // pictureBox2
             // 
-            this.txtDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtDocente.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(162)))), ((int)(((byte)(162)))));
-            this.txtDocente.Location = new System.Drawing.Point(50, 24);
-            this.txtDocente.Name = "txtDocente";
-            this.txtDocente.Size = new System.Drawing.Size(210, 22);
-            this.txtDocente.TabIndex = 27;
-            this.txtDocente.Text = "Insertar usuario del docente";
-            this.txtDocente.Visible = false;
+            this.pictureBox2.Image = global::AyudaProyecto.Properties.Resources.Avatar_Perfil;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 51);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // dtgConsulta
+            // pictureBox5
             // 
-            this.dtgConsulta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.dtgConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgConsulta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.dtgConsulta.Location = new System.Drawing.Point(54, 156);
-            this.dtgConsulta.Name = "dtgConsulta";
-            this.dtgConsulta.Size = new System.Drawing.Size(419, 206);
-            this.dtgConsulta.TabIndex = 26;
-            this.dtgConsulta.Visible = false;
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::AyudaProyecto.Properties.Resources.Link;
+            this.pictureBox5.Location = new System.Drawing.Point(222, 78);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(23, 20);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // grpTema
             // 
@@ -420,89 +693,27 @@
             this.txtTema.TabIndex = 27;
             this.txtTema.Text = "Escribir tema de la consulta";
             this.txtTema.Visible = false;
+            this.txtTema.Enter += new System.EventHandler(this.txtTema_Enter);
             // 
-            // pictureBox2
+            // lblX
             // 
-            this.pictureBox2.Image = global::AyudaProyecto.Properties.Resources.Avatar_Perfil;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 51);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::AyudaProyecto.Properties.Resources.Link;
-            this.pictureBox5.Location = new System.Drawing.Point(222, 78);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(23, 20);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.pictureBox4.Location = new System.Drawing.Point(18, 63);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(103, 99);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
-            // btnCrearChat
-            // 
-            this.btnCrearChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.btnCrearChat.Location = new System.Drawing.Point(21, 63);
-            this.btnCrearChat.Name = "btnCrearChat";
-            this.btnCrearChat.Size = new System.Drawing.Size(103, 99);
-            this.btnCrearChat.TabIndex = 6;
-            this.btnCrearChat.TabStop = false;
-            this.btnCrearChat.Click += new System.EventHandler(this.btnCrearChat_Click);
-            // 
-            // btnNuevaConsulta
-            // 
-            this.btnNuevaConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.btnNuevaConsulta.Location = new System.Drawing.Point(19, 63);
-            this.btnNuevaConsulta.Name = "btnNuevaConsulta";
-            this.btnNuevaConsulta.Size = new System.Drawing.Size(103, 99);
-            this.btnNuevaConsulta.TabIndex = 1;
-            this.btnNuevaConsulta.TabStop = false;
-            this.btnNuevaConsulta.Click += new System.EventHandler(this.btnNuevaConsulta_Click);
-            // 
-            // btnEnviarMensaje
-            // 
-            this.btnEnviarMensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
-            this.btnEnviarMensaje.Image = global::AyudaProyecto.Properties.Resources.Boton_Enviar_Mjs;
-            this.btnEnviarMensaje.Location = new System.Drawing.Point(485, 384);
-            this.btnEnviarMensaje.Name = "btnEnviarMensaje";
-            this.btnEnviarMensaje.Size = new System.Drawing.Size(28, 23);
-            this.btnEnviarMensaje.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEnviarMensaje.TabIndex = 22;
-            this.btnEnviarMensaje.TabStop = false;
-            this.btnEnviarMensaje.Visible = false;
-            this.btnEnviarMensaje.Click += new System.EventHandler(this.btnEnviarMensaje_Click);
-            // 
-            // btnEnviarFoto
-            // 
-            this.btnEnviarFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.btnEnviarFoto.Image = global::AyudaProyecto.Properties.Resources.Boton_adjuntar;
-            this.btnEnviarFoto.Location = new System.Drawing.Point(17, 384);
-            this.btnEnviarFoto.Name = "btnEnviarFoto";
-            this.btnEnviarFoto.Size = new System.Drawing.Size(28, 23);
-            this.btnEnviarFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEnviarFoto.TabIndex = 21;
-            this.btnEnviarFoto.TabStop = false;
-            this.btnEnviarFoto.Visible = false;
+            this.lblX.AutoSize = true;
+            this.lblX.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblX.ForeColor = System.Drawing.Color.LightGray;
+            this.lblX.Location = new System.Drawing.Point(767, 6);
+            this.lblX.Name = "lblX";
+            this.lblX.Size = new System.Drawing.Size(23, 23);
+            this.lblX.TabIndex = 31;
+            this.lblX.Text = "X";
+            this.lblX.Click += new System.EventHandler(this.lblX_Click);
             // 
             // ventanaAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(796, 637);
+            this.ClientSize = new System.Drawing.Size(796, 468);
+            this.Controls.Add(this.lblX);
             this.Controls.Add(this.grpTema);
             this.Controls.Add(this.pOpicones);
             this.Controls.Add(this.pNuevo);
@@ -515,26 +726,29 @@
             this.grpCrear.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCrearChat)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNuevaConsulta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsulta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarMensaje)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgNuevo)).EndInit();
             this.pOpicones.ResumeLayout(false);
             this.pOpicones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgConsulta)).EndInit();
-            this.grpTema.ResumeLayout(false);
-            this.grpTema.PerformLayout();
+            this.grpModificarNick.ResumeLayout(false);
+            this.grpModificarNick.PerformLayout();
+            this.grpModificar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCrearChat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNuevaConsulta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarMensaje)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEnviarFoto)).EndInit();
+            this.grpTema.ResumeLayout(false);
+            this.grpTema.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -567,12 +781,26 @@
         private System.Windows.Forms.Panel pOpicones;
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.PictureBox btnEnviarMensaje;
-        private System.Windows.Forms.PictureBox btnEnviarFoto;
         private System.Windows.Forms.Button btnChats;
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.TextBox txtDocente;
         private System.Windows.Forms.DataGridView dtgConsulta;
         private System.Windows.Forms.GroupBox grpTema;
         private System.Windows.Forms.TextBox txtTema;
+        private System.Windows.Forms.GroupBox grpModificar;
+        private System.Windows.Forms.Button btnModiNickname;
+        private System.Windows.Forms.Label lblNickname;
+        private System.Windows.Forms.GroupBox grpModificarNick;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtNuevoNick;
+        private System.Windows.Forms.Button btnCambiar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnLegajo;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnAgenda;
+        private System.Windows.Forms.Label lblX;
     }
 }

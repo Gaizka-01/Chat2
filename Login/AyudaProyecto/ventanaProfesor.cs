@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaLogica;
+using CapaDatos;
 using MySql.Data.MySqlClient;
 
 namespace AyudaProyecto
@@ -17,84 +17,154 @@ namespace AyudaProyecto
         public ventanaProfesor()
         {
             InitializeComponent();
-            lblNombreConfig.Text = CapaLogica.DatoUsu.Nombre + " " + CapaLogica.DatoUsu.Apellido;
-
+            lblNombreConfig.Text = CapaDatos.Usuario.NombreP + " " + CapaDatos.Usuario.ApellidoP;
+            lbMateria.Text = CapaDatos.Usuario.materiaP;
         }
         int posicion;
         string consultaTema;
-        string consultaAlumno;
+        int consultaID;
+        int CIA;
         
+        void MostrarConsulta()
+        {
+            txtM.Visible = true;
+            btnEnviarMensaje.Visible = true;
+            lblUsuarioContesta.Visible = true;
+        }
         private void btnConsultas_Click(object sender, EventArgs e)
         {
-
-            CapaLogica.ConexionBD.Conexion();
-            MySqlCommand MostrarConsultas = new MySqlCommand("Select consulta.tema, consulta.usuarioA, persona.Grupo From consulta, persona where consulta.usuarioP = '"+CapaLogica.DatoUsu.NombreUsu+"' and consulta.CI = persona.CI;", CapaLogica.ConexionBD.conectar);
-            MySqlDataAdapter adaptador = new MySqlDataAdapter();
-            adaptador.SelectCommand = MostrarConsultas;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dgNuevo.DataSource = tabla;
-             
-            CapaLogica.ConexionBD.CerrarConexion();
+            try {  
+            CapaDatos.Consultas.MostrarConsultasP(CapaDatos.Usuario.CI);
+            dgNuevoP.DataSource = CapaDatos.Consultas.Tabla;
+            } catch (Exception n)
+            {
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+            }
         }
 
-        private void dgNuevo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //datagrid Consulta alumno
-            posicion = e.RowIndex;
-            DataGridViewRow linea = dgNuevo.Rows[posicion];
-            consultaTema = linea.Cells[0].Value.ToString();
-            consultaAlumno = linea.Cells[1].Value.ToString();
-            CapaLogica.ConexionBD.Conexion();
-            MySqlCommand mostrarConsulta = new MySqlCommand("Select mensaje From consulta where tema = '"+consultaTema+"' and usuarioP = '"+CapaLogica.DatoUsu.NombreUsu+"' and usuarioA = '"+consultaAlumno+"'", CapaLogica.ConexionBD.conectar);
-            mostrarConsulta.ExecuteNonQuery();
-            MySqlDataAdapter adaptador = new MySqlDataAdapter();
-            adaptador.SelectCommand = mostrarConsulta;
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            dtgConsultaR.DataSource = tabla;
-            dtgConsultaR.Visible = true;
-
-            //Recuperar datos del alumno
-
-            MySqlCommand Nombre = new MySqlCommand("Select Nombre From persona where usuario = '"+consultaAlumno+"'", CapaLogica.ConexionBD.conectar);
-            MySqlCommand Apellido = new MySqlCommand("Select Apellido From persona where usuario = '"+consultaAlumno+"'", CapaLogica.ConexionBD.conectar);
-            MySqlCommand Grupo = new MySqlCommand("Select Grupo From persona where usuario = '"+consultaAlumno+"'", CapaLogica.ConexionBD.conectar);
-            MySqlCommand CI = new MySqlCommand("Select CI From persona where usuario = '"+consultaAlumno+"'", CapaLogica.ConexionBD.conectar);
-
-            Nombre.ExecuteNonQuery();
-            Apellido.ExecuteNonQuery();
-            Grupo.ExecuteNonQuery();
-            string NombreA;
-            string ApellidoA;
-            string GrupoA;
-            string CIA;
-            NombreA = Nombre.ExecuteScalar().ToString();
-            ApellidoA = Apellido.ExecuteScalar().ToString();
-            GrupoA = Grupo.ExecuteScalar().ToString();
-            CIA = CI.ExecuteScalar().ToString();
-         
-            lblUsuarioContesta.Text = "Para: " + NombreA + " / " + ApellidoA + " / " + CIA + " / " + GrupoA;
-            CapaLogica.ConexionBD.CerrarConexion();
-
-
-        }
+        
 
         private void btnEnviarMensaje_Click(object sender, EventArgs e)
         {
-            CapaLogica.ConexionBD.Conexion();
-            MySqlCommand enviarRespuesta = new MySqlCommand("insert into consulta (tema, mensaje, usuarioA, usuarioP, CI) values ('"+consultaTema+"', '"+txtM.Text+"', '"+consultaAlumno+"', '"+CapaLogica.DatoUsu.NombreUsu+"', '"+CapaLogica.DatoUsu.CIUsu+"')", CapaLogica.ConexionBD.conectar);
-            enviarRespuesta.ExecuteNonQuery();
-            MySqlCommand mostrarR = new MySqlCommand("Select mensaje From consulta where tema = '"+consultaTema+"' and usuarioP = '"+CapaLogica.DatoUsu.NombreUsu+"' and usuarioA = '"+consultaAlumno+"' and CI = '"+CapaLogica.DatoUsu.CIUsu+"' ", CapaLogica.ConexionBD.conectar);
-            mostrarR.ExecuteNonQuery();
-            MySqlDataAdapter adaptador = new MySqlDataAdapter();
-            adaptador.SelectCommand = mostrarR;
-            DataTable tablaR = new DataTable();
-            adaptador.Fill(tablaR);
-            dtgConsultaE.DataSource = tablaR;
-            dtgConsultaE.Visible = true;
-            CapaLogica.ConexionBD.CerrarConexion();
-            txtM.Text = "Message";
+            try { 
+            string MensajeP = txtM.Text;
+            CapaDatos.Consultas.EnviarMensajeP(consultaID, MensajeP);
+            if (CapaDatos.Usuario.Error == false)
+            {
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+                CapaDatos.Consultas.MostrarMensajeConsultaP(consultaID);
+                dtgConsultaE.DataSource = CapaDatos.Consultas.TablaMensajeP;
+                dtgConsultaE.Visible = true;
+                txtM.Text = "";
+            }
+            else
+            {
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+            }
+            } catch (Exception ee)
+            {
+                MessageBox.Show("Ocurrio un error" + ee);
+            }
+        }
+
+        private void dgNuevoP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            posicion = e.RowIndex;
+            DataGridViewRow linea = dgNuevoP.Rows[posicion];
+            consultaTema = linea.Cells[0].Value.ToString();
+            consultaID = Convert.ToInt32(linea.Cells[3].Value);
+            CIA = Convert.ToInt32(linea.Cells[1].Value);
+            try
+            {
+                MostrarConsulta();
+                CapaDatos.Usuario.DevolverAlumno(CIA);
+                lblUsuarioContesta.Text = "De: " + CapaDatos.Usuario.Nombre + " " + CapaDatos.Usuario.Apellido + "\n Titulo: " + consultaTema;
+                CapaDatos.Consultas.MostrarMensajeConsultaA(consultaID);
+                dtgConsultaR.DataSource = CapaDatos.Consultas.TablaMensajeA;
+                dtgConsultaR.Visible = true;
+            } catch (Exception ea) {
+                MessageBox.Show("Ocurrio un error \n " +ea);
+            }
+        }
+        private void btnChats_Click(object sender, EventArgs e)
+        {
+            chatProfesor nuevo = new chatProfesor();
+            nuevo.Show();
+            this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            grpModificar.Visible = true;
+        }
+
+        private void btnCambiar_Click(object sender, EventArgs e)
+        {
+            grpModificarNick.Visible = true;
+            string nuevo = lbMateria.SelectedItem.ToString();
+
+            try
+            {
+                CapaDatos.Usuario.CambiarMateriaP(CapaDatos.Usuario.CIP, nuevo);
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+                lblMateria.Text = nuevo;
+            }catch (Exception eas)
+            {
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+            } finally
+            {
+                grpModificar.Visible = false;
+                grpModificarNick.Visible = false;
+                lbMateria.Visible = false;
+                btnCambiar.Visible = false;
+            }
+        }
+
+        private void btnModiMateria_Click(object sender, EventArgs e)
+        {
+            grpModificarNick.Visible = true;
+            lbMateria.Visible = true;
+            btnCambiar.Visible = true;
+        }
+
+        private void btnAgenda_Click(object sender, EventArgs e)
+        {
+            grpAgenda.Visible = true;
+            btnConfirmar.Visible = true;
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            string dias = listaDias.SelectedItem.ToString();
+            try
+            {
+                CapaDatos.Usuario.RellenarAgenda(CapaDatos.Usuario.CIP, dias);
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+            }catch (Exception ea)
+            {
+                MessageBox.Show(CapaDatos.Usuario.mensaje);
+            }
+            finally
+            {
+                grpAgenda.Visible = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            grpModificar.Visible = false;
+            grpModificarNick.Visible = false;
+            grpAgenda.Visible = false;
+        }
+
+        private void lblX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtM_Enter(object sender, EventArgs e)
+        {
+            if (txtM.Text == "Message") txtM.Text = "";
         }
     }
 }
